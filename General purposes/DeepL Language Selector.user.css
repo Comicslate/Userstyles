@@ -1,0 +1,172 @@
+/* ==UserStyle==
+@name           DeepL Language Selector
+@namespace      Comicslate
+@version        2021.5.21
+@preprocessor   less
+@license        CC-BY-NC-SA-4.0
+@author         Rainbow-Spike
+@supportURL     https://github.com/Comicslate/Userstyles/raw/main/General%20purposes/DeepL%20Language%20Selector.user.css
+==/UserStyle== */
+
+@-moz-document domain("deepl.com") {
+	.back_rb ( @pic, @r, @b ) {
+		background: ~ "url(https://github.com/DavideViolante/Wikipedia-Flag-Icons/raw/master/Chrome%20Extension/WikipediaFlagIcons/flags/@{pic}.png) right @{r}px bottom @{b}px";
+	}
+
+	div.lmt__language_select__menu {
+		border-radius: 20px;
+		display: flex !important;
+		overflow: hidden;
+		padding: 0;
+		width: 950px; /* настраивать здесь. 1/2 ширины экрана минус 20px */
+
+		&[dl-test*="source"] {
+			left: 1px !important;
+		}
+
+		&[dl-test*="target"] {
+			left: -19px !important;
+		}
+
+		& button {
+			border: 2px solid #eee;
+			border-radius: 20px;
+			color: white;
+			display: flex !important;
+			padding: 0 0 5px 6px;
+			text-indent: 29px;
+			min-width: 6.66%;
+
+			&[dl-test*="en"] {
+				order: 0;
+			}
+			&[dl-test*="-ru"] {
+				order: 1;
+			}
+			&[dl-test*="-de"] {
+				order: 2;
+			}
+			&[dl-test*="-fr"] {
+				order: 3;
+			}
+			&[dl-test*="-bg"] {
+				order: 4;
+			}
+			&[dl-test*="-da"] {
+				order: 5;
+			}
+			&[dl-test*="-el"] {
+				order: 6;
+			}
+			&[dl-test*="-es"] {
+				order: 7;
+			}
+			&[dl-test*="-fi"] {
+				order: 8;
+			}
+			&[dl-test*="-hu"] {
+				order: 9;
+			}
+			&[dl-test*="-it"] {
+				order: 10;
+			}
+			&[dl-test*="-ja"] {
+				order: 11;
+			}
+			&[dl-test*="-pl"] {
+				order: 12;
+			}
+			&[dl-test*="-pt"] {
+				order: 13;
+			}
+			&[dl-test*="-zh"] {
+				order: 14;
+			}
+
+			&[dl-test*="-auto"],
+			&[dl-test*="en-GB"],
+			&[dl-test*="-lv"],
+			&[dl-test*="-lt"],
+			&[dl-test*="-nl"],
+			&[dl-test*="pt-BR"],
+			&[dl-test*="-ro"],
+			&[dl-test*="-sk"],
+			&[dl-test*="-sl"],
+			&[dl-test*="-cs"],
+			&[dl-test*="-sv"],
+			&[dl-test*="-et"] {
+				display: none !important;
+			}
+
+			&[dl-test]::before {
+				/* свои подписи */
+				background-repeat: no-repeat !important;
+				color: black;
+			}
+
+			&[dl-test*="-bg"]::before {
+				.back_rb ( bg, 25, 9);
+				content: 'bg';
+			}
+			&[dl-test*="-da"]::before {
+				.back_rb ( dk, 22, 8);
+				content: 'da';
+			}
+			&[dl-test*="-de"]::before {
+				.back_rb ( de, 24, 8);
+				content: 'de';
+			}
+			&[dl-test*="-el"]::before {
+				.back_rb ( gr, 23, 8);
+				content: 'el';
+			}
+			&[dl-test*="-en"]::before {
+				.back_rb ( gb, 25, 8);
+				content: 'en';
+			}
+			&[dl-test*="-en-US"]::before {
+				.back_rb ( us, 25, 8);
+			}
+			&[dl-test*="-es"]::before {
+				.back_rb ( es, 22, 8);
+				content: 'es';
+			}
+			&[dl-test*="-fi"]::before {
+				.back_rb ( fi, 15, 8);
+				content: 'fi';
+			}
+			&[dl-test*="-fr"]::before {
+				.back_rb ( fr, 18, 8);
+				content: 'fr';
+			}
+			&[dl-test*="-hu"]::before {
+				.back_rb ( hu, 23, 8);
+				content: 'hu';
+			}
+			&[dl-test*="-it"]::before {
+				.back_rb ( it, 18, 8);
+				content: 'it';
+			}
+			&[dl-test*="-ja"]::before {
+				.back_rb ( jp, 20, 8);
+				content: 'ja';
+			}
+			&[dl-test*="-pl"]::before {
+				.back_rb ( pl, 21, 8);
+				content: 'pl';
+			}
+			&[dl-test*="-pt"]::before {
+				.back_rb ( pt, 22, 8);
+				content: 'pt';
+			}
+			&[dl-test*="-ru"]::before {
+				.back_rb ( ru, 22, 8);
+				content: 'ru';
+			}
+			&[dl-test*="-zh"]::before {
+				.back_rb ( cn, 24, 8);
+				content: 'zh';
+			}
+		}
+	}
+}
