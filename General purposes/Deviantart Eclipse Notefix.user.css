@@ -1,0 +1,16 @@
+a[data-hook="deviation_link"] h2 { /* титулы полные */
+	white-space: normal;
+}
+
+a[aria-label="Comment"],
+button[aria-label="Favourite"] { /* комменты и лайки убрать */
+	display: none;
+}
+
+.YGCoP { /* крестик при просмотре картинки */
+	display: none;
+}
+
+._1izoQ._2kD7E { /* попытка вывести картинку поверх всего */
+	z-index: 1000000;
+}
