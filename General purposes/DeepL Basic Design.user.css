@@ -1,0 +1,84 @@
+/* ==UserStyle==
+@name           DeepL Basic Design
+@namespace      Comicslate
+@version        2021.5.21
+@preprocessor   less
+@license        CC-BY-NC-SA-4.0
+@author         Rainbow-Spike
+@supportURL     https://github.com/Comicslate/Userstyles/raw/main/General%20purposes/DeepL%20Basic%20Design.user.css
+==/UserStyle== */
+
+@-moz-document domain("deepl.com") {
+	body {
+		overflow: auto !important;
+
+		header { /* прибираемся в верхнем меню */
+			display: none;
+		}
+
+		div.dl_translator_page_container { /* расширяем основное окно */
+			min-height: auto;
+
+			div#dl_translator {
+				max-width: 100%;
+				padding: 0 5px;
+
+				div.lmt__docTrans-tab-container { /* прибираемся в переводе файлов */
+					display: none;
+				}
+
+				div.lmt__side_container {
+					.lmt__language_container {
+						margin-bottom: 37px;
+					}
+					&.lmt__side_container--source {
+						.lmt__clear_text_button {
+							right: 0px;
+							top: 87px;
+						}
+						div.lmt__textarea_container { /* рамки левой зоны */
+							padding: 0 28px 36px 12px;
+						}
+					}
+
+					&.lmt__side_container--target {
+						div.lmt__textarea_container { /* рамки правой зоны */
+							padding: 0 0 36px 12px;
+
+							div.lmt__target_toolbar { /* прибираем значки шары и рейтинга */
+								div.lmt__target_toolbar__share,
+								div.lmt__rating {
+									display: none !important;
+								}
+							}
+						}
+					}
+				}
+				h1.eSEOtericText { /* прибираем рекламку */
+//					display: none !important;
+				}
+			}
+
+			.dl_ad_pro_container,
+			article#lmt_quotes_article { /* прибираем рекламку */
+				display: none !important;
+			}
+		}
+
+		footer { /* жмём футер */
+			padding: 0 !important;
+
+			.dl_footer__container {
+				padding: 3px !important;
+
+				.dl_menu_item {
+					padding: 0 10px;
+				}
+
+				.dl_footer__social {
+					top: 0;
+				}
+			}
+		}
+	}
+}
