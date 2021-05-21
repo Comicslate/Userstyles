@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           DeepL Basic Design
 @namespace      Comicslate
-@version        2021.5.21
+@version        2021.5.22
 @preprocessor   less
 @license        CC-BY-NC-SA-4.0
 @author         Rainbow-Spike
@@ -66,7 +66,9 @@
 		}
 
 		footer { /* жмём футер */
+			bottom: 0;
 			padding: 0 !important;
+			position: fixed !important;
 
 			.dl_footer__container {
 				padding: 3px !important;
