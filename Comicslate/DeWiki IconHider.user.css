@@ -1,0 +1,16 @@
+/* ==UserStyle==
+@name           DeWiki IconHider
+@namespace      Comicslate
+@version        2021.6.4
+@author         Rainbow-Spike
+@preprocessor   less
+==/UserStyle== */
+
+@-moz-document domain("comicslate.org") {
+	.iw_dew {
+ 	   background-image: none !important;
+		&:hover {
+		   background-image: url(data:image/gif;base64,R0lGODlhEAAQAPMJADIxMlRUVG9vb4B/gJGRka6urtTV1N/g3/j5+P///wAAAAAAAAAAAAAAAAAAAAAAACH5BAEAAAkALAAAAAAQABAAAARYMMlJq70W6c017SBCGUKBEMRhpAVBHQGBFIDRzsVHAAcspLPDxwAw0Uw24URDCPQAsoLpgyAWDAEnkIoIlAoxk2jJhCIEPA8ZcSAYqjK1hHPY1OWYvJ4SAQA7) !important;
+		}
+	}
+}
