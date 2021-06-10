@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           DeepL Upper Flags
 @namespace      Comicslate
-@version        2021.5.21
+@version        2021.6.10
 @preprocessor   less
 @license        CC-BY-NC-SA-4.0
 @author         Rainbow-Spike
@@ -15,9 +15,9 @@
 
 	div.lmt__language_select {
 		strong {
-			background-position: left 3px top 25px !important;
+			background-position: left 4px top 6px !important;
 			background-repeat: no-repeat !important;
-			padding-left: 25px;
+			padding-left: 23px;
 		}
 
 		&[dl-selected-lang*="bg"] strong { .back ( bg ) }
