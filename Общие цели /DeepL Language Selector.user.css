@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           DeepL Language Selector
 @namespace      Comicslate
-@version        2021.5.21
+@version        2021.6.10
 @preprocessor   less
 @license        CC-BY-NC-SA-4.0
 @author         Rainbow-Spike
@@ -13,22 +13,22 @@
 		background: ~ "url(https://github.com/DavideViolante/Wikipedia-Flag-Icons/raw/master/Chrome%20Extension/WikipediaFlagIcons/flags/@{pic}.png) right @{r}px bottom @{b}px";
 	}
 
-	div.lmt__language_select__menu {
+	.integratedLanguageSelectors .lmt--web .lmt__sides_container div.lmt__language_select__menu {
 		border-radius: 20px;
 		display: flex !important;
 		overflow: hidden;
 		padding: 0;
-		width: 950px; /* настраивать здесь. 1/2 ширины экрана минус 20px */
+		width: 930px; /* настраивать здесь. 1/2 ширины экрана минус 40px */
 
 		&[dl-test*="source"] {
-			left: 1px !important;
+			left: -26px !important;
 		}
 
 		&[dl-test*="target"] {
-			left: -19px !important;
+			left: -9px !important;
 		}
 
-		& button {
+		button {
 			border: 2px solid #eee;
 			border-radius: 20px;
 			color: white;
