@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           DeepL Basic Design
 @namespace      Comicslate
-@version        2021.5.22
+@version        2021.6.10
 @preprocessor   less
 @license        CC-BY-NC-SA-4.0
 @author         Rainbow-Spike
@@ -10,7 +10,7 @@
 
 @-moz-document domain("deepl.com") {
 	body {
-		overflow: auto !important;
+		/*overflow: auto !important;*/
 
 		header { /* прибираемся в верхнем меню */
 			display: none;
@@ -54,8 +54,8 @@
 						}
 					}
 				}
-				h1.eSEOtericText { /* прибираем рекламку */
-//					display: none !important;
+				.lmt__dict {
+					margin: 10px 0 34px 0;
 				}
 			}
 
@@ -71,6 +71,7 @@
 			position: fixed !important;
 
 			.dl_footer__container {
+				height: 35px;
 				padding: 3px !important;
 
 				.dl_menu_item {
