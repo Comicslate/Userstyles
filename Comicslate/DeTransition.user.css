@@ -1,0 +1,16 @@
+/* ==UserStyle==
+@name           Comicslate DeTransition
+@namespace      Comicslate
+@version        2021.8.28
+@author         Rainbow-Spike
+@preprocessor   less
+==/UserStyle== */
+
+@-moz-document domain("comicslate.org") {
+	.cotan .ct-area .ct-ui {
+		transition: none;
+		.ct-handle {
+			transition: none;
+		}
+	}
+}
