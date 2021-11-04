@@ -1,7 +1,7 @@
 /* ==UserStyle==
-@name           DeepL Basic Design
+@name           DeepL Basic Design LESS
 @namespace      Comicslate
-@version        2021.6.10
+@version        2021.11.4
 @preprocessor   less
 @license        CC-BY-NC-SA-4.0
 @author         Rainbow-Spike
@@ -46,7 +46,7 @@
 							padding: 0 0 36px 12px;
 
 							div.lmt__target_toolbar { /* прибираем значки шары и рейтинга */
-								div.lmt__target_toolbar__share,
+								div.lmt__target_toolbar__share_container,
 								div.lmt__rating {
 									display: none !important;
 								}
