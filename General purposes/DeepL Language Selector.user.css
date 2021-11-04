@@ -1,7 +1,7 @@
 /* ==UserStyle==
-@name           DeepL Language Selector
+@name           DeepL Language Selector LESS
 @namespace      Comicslate
-@version        2021.6.10
+@version        2021.11.4
 @preprocessor   less
 @license        CC-BY-NC-SA-4.0
 @author         Rainbow-Spike
@@ -15,17 +15,21 @@
 
 	.integratedLanguageSelectors .lmt--web .lmt__sides_container div.lmt__language_select__menu {
 		border-radius: 20px;
-		display: flex !important;
 		overflow: hidden;
 		padding: 0;
 		width: 930px; /* настраивать здесь. 1/2 ширины экрана минус 40px */
+		
+		.lmt__language_select_column {
+			border-right: none;
+			width: 10%;
+		}
 
 		&[dl-test*="source"] {
-			left: -26px !important;
+			left: 0 !important;
 		}
 
 		&[dl-test*="target"] {
-			left: -9px !important;
+			left: 0 !important;
 		}
 
 		button {
@@ -33,55 +37,10 @@
 			border-radius: 20px;
 			color: white;
 			display: flex !important;
+			height: 36px;
 			padding: 0 0 5px 6px;
 			text-indent: 29px;
 			min-width: 6.66%;
-
-			&[dl-test*="en"] {
-				order: 0;
-			}
-			&[dl-test*="-ru"] {
-				order: 1;
-			}
-			&[dl-test*="-de"] {
-				order: 2;
-			}
-			&[dl-test*="-fr"] {
-				order: 3;
-			}
-			&[dl-test*="-bg"] {
-				order: 4;
-			}
-			&[dl-test*="-da"] {
-				order: 5;
-			}
-			&[dl-test*="-el"] {
-				order: 6;
-			}
-			&[dl-test*="-es"] {
-				order: 7;
-			}
-			&[dl-test*="-fi"] {
-				order: 8;
-			}
-			&[dl-test*="-hu"] {
-				order: 9;
-			}
-			&[dl-test*="-it"] {
-				order: 10;
-			}
-			&[dl-test*="-ja"] {
-				order: 11;
-			}
-			&[dl-test*="-pl"] {
-				order: 12;
-			}
-			&[dl-test*="-pt"] {
-				order: 13;
-			}
-			&[dl-test*="-zh"] {
-				order: 14;
-			}
 
 			&[dl-test*="-auto"],
 			&[dl-test*="en-GB"],
