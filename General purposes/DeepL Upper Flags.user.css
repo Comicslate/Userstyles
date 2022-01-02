@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           DeepL Upper Flags
 @namespace      Comicslate
-@version        2021.6.10
+@version        2022.01.02
 @preprocessor   less
 @license        CC-BY-NC-SA-4.0
 @author         Rainbow-Spike
@@ -34,6 +34,7 @@
 		&[dl-selected-lang*="ja"] strong { .back ( jp ) }
 		&[dl-selected-lang*="pl"] strong { .back ( pl ) }
 		&[dl-selected-lang*="pt"] strong { .back ( pt ) }
+		&[dl-selected-lang*="pt-BR"] strong { .back ( br ) }
 		&[dl-selected-lang*="ru"] strong { .back ( ru ) }
 		&[dl-selected-lang*="zh"] strong { .back ( cn ) }
 		/* остальные языки */
