@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           DeepL Language Selector LESS
 @namespace      Comicslate
-@version        2021.11.4
+@version        2022.01.02
 @preprocessor   less
 @license        CC-BY-NC-SA-4.0
 @author         Rainbow-Spike
@@ -47,7 +47,6 @@
 			&[dl-test*="-lv"],
 			&[dl-test*="-lt"],
 			&[dl-test*="-nl"],
-			&[dl-test*="pt-BR"],
 			&[dl-test*="-ro"],
 			&[dl-test*="-sk"],
 			&[dl-test*="-sl"],
@@ -117,6 +116,10 @@
 			&[dl-test*="-pt"]::before {
 				.back_rb ( pt, 22, 8);
 				content: 'pt';
+			}
+			&[dl-test*="-pt-BR"]::before {
+				.back_rb ( br, 22, 8);
+				content: 'br';
 			}
 			&[dl-test*="-ru"]::before {
 				.back_rb ( ru, 22, 8);
