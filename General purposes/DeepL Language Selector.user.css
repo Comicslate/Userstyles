@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           DeepL Language Selector LESS
 @namespace      Comicslate
-@version        2022.01.02
+@version        2022.01.13
 @preprocessor   less
 @license        CC-BY-NC-SA-4.0
 @author         Rainbow-Spike
@@ -15,32 +15,33 @@
 
 	.integratedLanguageSelectors .lmt--web .lmt__sides_container div.lmt__language_select__menu {
 		border-radius: 20px;
-		overflow: hidden;
-		padding: 0;
-		width: 930px; /* настраивать здесь. 1/2 ширины экрана минус 40px */
+		height: 31px;
+		width: 100%;
 		
-		.lmt__language_select_column {
-			border-right: none;
-			width: 10%;
-		}
-
 		&[dl-test*="source"] {
 			left: 0 !important;
+			button {
+				width: 6.66%;
+			}
 		}
 
 		&[dl-test*="target"] {
 			left: 0 !important;
+			button {
+				width: 6.25%;
+			}
 		}
-
+		
 		button {
 			border: 2px solid #eee;
 			border-radius: 20px;
 			color: white;
-			display: flex !important;
-			height: 36px;
-			padding: 0 0 5px 6px;
-			text-indent: 29px;
-			min-width: 6.66%;
+			display: inline-flex;
+			height: 30px;
+			line-height: normal;
+			min-width: 6.25%;
+			padding: 0;
+			text-indent: 30px;
 
 			&[dl-test*="-auto"],
 			&[dl-test*="en-GB"],
@@ -62,28 +63,40 @@
 				color: black;
 			}
 
-			&[dl-test*="-bg"]::before {
-				.back_rb ( bg, 25, 9);
-				content: 'bg';
+			&[dl-test*="-en"]::before {
+				.back_rb ( gb, 23, 8);
+				content: 'en';
 			}
-			&[dl-test*="-da"]::before {
-				.back_rb ( dk, 22, 8);
-				content: 'da';
+			&[dl-test*="-en-US"]::before {
+				.back_rb ( us, 23, 8);
+			}
+			&[dl-test*="-ru"]::before {
+				.back_rb ( ru, 21, 8);
+				content: 'ru';
 			}
 			&[dl-test*="-de"]::before {
 				.back_rb ( de, 24, 8);
 				content: 'de';
 			}
+			&[dl-test*="-fr"]::before {
+				.back_rb ( fr, 16, 8);
+				content: 'fr';
+			}
+			&[dl-test*="-bg"]::before {
+				.back_rb ( bg, 25, 9);
+				content: 'bg';
+			}
+			&[dl-test*="-pt-BR"]::before {
+				.back_rb ( br, 22, 8);
+				content: 'br';
+			}
+			&[dl-test*="-da"]::before {
+				.back_rb ( dk, 22, 8);
+				content: 'da';
+			}
 			&[dl-test*="-el"]::before {
-				.back_rb ( gr, 23, 8);
+				.back_rb ( gr, 19, 8);
 				content: 'el';
-			}
-			&[dl-test*="-en"]::before {
-				.back_rb ( gb, 25, 8);
-				content: 'en';
-			}
-			&[dl-test*="-en-US"]::before {
-				.back_rb ( us, 25, 8);
 			}
 			&[dl-test*="-es"]::before {
 				.back_rb ( es, 22, 8);
@@ -93,41 +106,79 @@
 				.back_rb ( fi, 15, 8);
 				content: 'fi';
 			}
-			&[dl-test*="-fr"]::before {
-				.back_rb ( fr, 18, 8);
-				content: 'fr';
-			}
 			&[dl-test*="-hu"]::before {
-				.back_rb ( hu, 23, 8);
+				.back_rb ( hu, 24, 8);
 				content: 'hu';
 			}
 			&[dl-test*="-it"]::before {
-				.back_rb ( it, 18, 8);
+				.back_rb ( it, 17, 8);
 				content: 'it';
 			}
 			&[dl-test*="-ja"]::before {
-				.back_rb ( jp, 20, 8);
+				.back_rb ( jp, 19, 8);
 				content: 'ja';
 			}
 			&[dl-test*="-pl"]::before {
-				.back_rb ( pl, 21, 8);
+				.back_rb ( pl, 19, 8);
 				content: 'pl';
 			}
-			&[dl-test*="-pt"]::before {
-				.back_rb ( pt, 22, 8);
+			&[dl-test$="-pt"]::before,
+			&[dl-test*="-pt-PT"]::before {
+				.back_rb ( pt, 21, 8);
 				content: 'pt';
 			}
-			&[dl-test*="-pt-BR"]::before {
-				.back_rb ( br, 22, 8);
-				content: 'br';
-			}
-			&[dl-test*="-ru"]::before {
-				.back_rb ( ru, 22, 8);
-				content: 'ru';
-			}
 			&[dl-test*="-zh"]::before {
-				.back_rb ( cn, 24, 8);
+				.back_rb ( cn, 23, 8);
 				content: 'zh';
+			}
+			&[dl-test*="-en"] {
+				order: 0;
+			}
+			&[dl-test*="-ru"] {
+				order: 1;
+			}
+			&[dl-test*="-de"] {
+				order: 2;
+			}
+			&[dl-test*="-fr"] {
+				order: 3;
+			}
+			&[dl-test*="-bg"] {
+				order: 4;
+			}
+			&[dl-test*="-pt-BR"] {
+				order: 5;
+			}
+			&[dl-test*="-da"] {
+				order: 6;
+			}
+			&[dl-test*="-el"] {
+				order: 7;
+			}
+			&[dl-test*="-es"] {
+				order: 8;
+			}
+			&[dl-test*="-fi"] {
+				order: 9;
+			}
+			&[dl-test*="-hu"] {
+				order: 10;
+			}
+			&[dl-test*="-it"] {
+				order: 11;
+			}
+			&[dl-test*="-ja"] {
+				order: 12;
+			}
+			&[dl-test*="-pl"] {
+				order: 13;
+			}
+			&[dl-test$="-pt"],
+			&[dl-test*="-pt-PT"] {
+				order: 14;
+			}
+			&[dl-test*="-zh"] {
+				order: 15;
 			}
 		}
 	}
