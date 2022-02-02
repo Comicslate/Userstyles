@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           DeepL Language Selector LESS
 @namespace      Comicslate
-@version        2022.01.13
+@version        2022.02.02
 @preprocessor   less
 @license        CC-BY-NC-SA-4.0
 @author         Rainbow-Spike
@@ -17,6 +17,9 @@
 		border-radius: 20px;
 		height: 31px;
 		width: 100%;
+        .headline, .lmt__language_wrapper:nth-of-type(2) {
+            display: none;
+        }
 		
 		&[dl-test*="source"] {
 			left: 0 !important;
