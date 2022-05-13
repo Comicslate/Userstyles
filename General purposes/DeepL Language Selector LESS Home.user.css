@@ -1,0 +1,209 @@
+/* ==UserStyle==
+@name           DeepL Language Selector LESS Home
+@namespace      Comicslate
+@version        2022.02.02
+@preprocessor   less
+@license        CC-BY-NC-SA-4.0
+@author         Rainbow-Spike
+@supportURL     https://github.com/Comicslate/Userstyles/raw/main/General%20purposes/DeepL%20Language%20Selector%20LESS%20Home.user.css
+==/UserStyle== */
+
+@-moz-document domain("deepl.com") {
+	.back_rb ( @pic, @r, @b ) {
+		background: ~ "url(https://github.com/DavideViolante/Wikipedia-Flag-Icons/raw/master/Chrome%20Extension/WikipediaFlagIcons/flags/@{pic}.png) right @{r}px bottom @{b}px";
+	}
+
+	.integratedLanguageSelectors .lmt--web .lmt__sides_container div.lmt__language_select__menu {
+		border-radius: 20px;
+		height: 31px;
+		width: 100%;
+        div:nth-of-type(1) {
+            display: none !important;
+        }
+		
+		.lmt__language_wrapper {
+			margin: 0;
+		}
+		
+		&[dl-test*="source"] {
+			left: 0 !important;
+			button {
+				width: calc(100% / 16);
+			}
+		}
+
+		&[dl-test*="target"] {
+			left: 0 !important;
+			button {
+				width: calc(100% / 17);
+			}
+		}
+		
+		button {
+			border: 2px solid #eee;
+			border-radius: 20px;
+			color: white;
+			display: inline-flex;
+			height: 30px;
+			line-height: normal;
+			min-width: calc(100% / 17);
+			padding: 0;
+			text-indent: 17px;
+			span {
+				display: none !important;
+			}
+
+			&[dl-test*="-auto"],
+			&[dl-test*="en-GB"],
+			&[dl-test*="-lv"],
+			&[dl-test*="-lt"],
+			&[dl-test*="-nl"],
+			&[dl-test*="-ro"],
+			&[dl-test*="-sk"],
+			&[dl-test*="-sl"],
+			&[dl-test*="-sv"],
+			&[dl-test*="-et"] {
+				display: none !important;
+			}
+
+			&[dl-test]::before {
+				/* свои подписи */
+				background-repeat: no-repeat !important;
+				color: black;
+			}
+
+			&[dl-test*="-en"]::before {
+				.back_rb ( gb, 17, 8);
+				content: 'en';
+			}
+			&[dl-test*="-en-US"]::before {
+				.back_rb ( us, 17, 8);
+			}
+			&[dl-test*="-ru"]::before {
+				.back_rb ( ru, 15, 8);
+				content: 'ru';
+			}
+			&[dl-test*="-de"]::before {
+				.back_rb ( de, 18, 8);
+				content: 'de';
+			}
+			&[dl-test*="-fr"]::before {
+				.back_rb ( fr, 11, 8);
+				content: 'fr';
+			}
+			&[dl-test*="-bg"]::before {
+				.back_rb ( bg, 19, 9);
+				content: 'bg';
+			}
+			&[dl-test*="-pt-BR"]::before {
+				.back_rb ( br, 16, 8);
+				content: 'br';
+			}
+			&[dl-test*="-cs"]::before {
+				.back_rb ( cz, 15, 8);
+				content: 'cs';
+				margin-left: 1px;
+			}
+			&[dl-test*="-da"]::before {
+				.back_rb ( dk, 19, 8);
+				content: 'da';
+				margin-left: 1px;
+			}
+			&[dl-test*="-el"]::before {
+				.back_rb ( gr, 13, 8);
+				content: 'el';
+			}
+			&[dl-test*="-es"]::before {
+				.back_rb ( es, 16, 8);
+				content: 'es';
+				margin-left: 1px;
+			}
+			&[dl-test*="-fi"]::before {
+				.back_rb ( fi, 10, 8);
+				content: 'fi';
+				margin-left: 1px;
+			}
+			&[dl-test*="-hu"]::before {
+				.back_rb ( hu, 18, 8);
+				content: 'hu';
+			}
+			&[dl-test*="-it"]::before {
+				.back_rb ( it, 10, 8);
+				content: 'it';
+				margin-left: 1px;
+			}
+			&[dl-test*="-ja"]::before {
+				.back_rb ( jp, 14, 8);
+				content: 'ja';
+				margin-left: 2px;
+			}
+			&[dl-test*="-pl"]::before {
+				.back_rb ( pl, 14, 8);
+				content: 'pl';
+			}
+			&[dl-test$="-pt"]::before,
+			&[dl-test*="-pt-PT"]::before {
+				.back_rb ( pt, 15, 8);
+				content: 'pt';
+				margin-left: 1px;
+			}
+			&[dl-test*="-zh"]::before {
+				.back_rb ( cn, 17, 8);
+				content: 'zh';
+				margin-left: 1px;
+			}
+			&[dl-test*="-en"] {
+				order: 0;
+			}
+			&[dl-test*="-ru"] {
+				order: 1;
+			}
+			&[dl-test*="-de"] {
+				order: 2;
+			}
+			&[dl-test*="-fr"] {
+				order: 3;
+			}
+			&[dl-test*="-bg"] {
+				order: 4;
+			}
+			&[dl-test*="-cs"] {
+				order: 5;
+			}
+			&[dl-test*="-pt-BR"] {
+				order: 6;
+			}
+			&[dl-test*="-da"] {
+				order: 7;
+			}
+			&[dl-test*="-el"] {
+				order: 8;
+			}
+			&[dl-test*="-es"] {
+				order: 9;
+			}
+			&[dl-test*="-fi"] {
+				order: 10;
+			}
+			&[dl-test*="-hu"] {
+				order: 11;
+			}
+			&[dl-test*="-it"] {
+				order: 12;
+			}
+			&[dl-test*="-ja"] {
+				order: 13;
+			}
+			&[dl-test*="-pl"] {
+				order: 14;
+			}
+			&[dl-test$="-pt"],
+			&[dl-test*="-pt-PT"] {
+				order: 15;
+			}
+			&[dl-test*="-zh"] {
+				order: 16;
+			}
+		}
+	}
+}
