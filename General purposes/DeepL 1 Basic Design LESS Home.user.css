@@ -1,0 +1,50 @@
+/* ==UserStyle==
+@name           DeepL 1 Basic Design LESS Home
+@namespace      Comicslate
+@version        2022.05.26
+@preprocessor   less
+@license        CC-BY-NC-SA-4.0
+@author         Rainbow-Spike
+@supportURL     https://github.com/Comicslate/Userstyles/raw/main/General%20purposes/DeepL%201%20Basic%20Design%20LESS%20Home.user.css
+==/UserStyle== */
+
+@-moz-document domain("deepl.com") {
+	header, .lmt__docTrans-tab-container, .lmt__language_container_sec,
+	.lmt__source_toolbar, .lmt__target_toolbar,
+	.dl_ad_pro_container, .eSEOtericText, #dl_quotes_container, footer {
+		display: none !important;
+	}
+
+	main#dl_translator {
+		padding: 2px;
+	}
+	.lmt__sides_container {
+		margin: 0 !important;
+	}
+
+	.lmt__language_container_switch {
+		height: 29px !important;
+		margin: 0 !important;
+		padding: 0 0 2px 2px !important;
+		left: -17px;
+		top: -4px;
+		width: 29px !important;
+	}
+	.lmt__language_container {
+		height: 25px !important;
+	}
+
+	.lmt__textarea_separator {
+		flex: 0 0 1px !important;
+	}
+	.lmt__textarea_container {
+		padding: 0 3px !important;
+	}
+	.lmt__clear_text_button_wrapper {
+		top: 0;
+		right: 0;
+		button {
+			border: 1px lightgray solid;
+		}
+	}
+}
