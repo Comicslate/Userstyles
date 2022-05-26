@@ -1,11 +1,11 @@
 /* ==UserStyle==
-@name           DeepL Upper Flags LESS Home
+@name           DeepL 2 Upper Flags LESS Home
 @namespace      Comicslate
-@version        2022.05.18.1
+@version        2022.05.26
 @preprocessor   less
 @license        CC-BY-NC-SA-4.0
 @author         Rainbow-Spike
-@supportURL     https://github.com/Comicslate/Userstyles/raw/main/General%20purposes/DeepL%20Upper%20Flags%20LESS%20Home.user.css
+@supportURL     https://github.com/Comicslate/Userstyles/raw/main/General%20purposes/DeepL%202%20Upper%20Flags%20LESS%20Home.user.css
 ==/UserStyle== */
 
 @-moz-document domain("deepl.com") {
@@ -15,8 +15,9 @@
 
 	div.lmt__language_select {
 		strong {
-			background-position: 50% -15% !important;
+			background-position: 0 50% !important;
 			background-repeat: no-repeat !important;
+			text-indent: 20px;
 		}
 
 		&[dl-selected-lang*="en"] strong { .back ( gb ) }
