@@ -1,11 +1,11 @@
 /* ==UserStyle==
-@name           DeepL Language Selector LESS Home
+@name           DeepL 3 Language Selector LESS Home
 @namespace      Comicslate
-@version        2022.05.18
+@version        2022.05.26
 @preprocessor   less
 @license        CC-BY-NC-SA-4.0
 @author         Rainbow-Spike
-@supportURL     https://github.com/Comicslate/Userstyles/raw/main/General%20purposes/DeepL%20Language%20Selector%20LESS%20Home.user.css
+@supportURL     https://github.com/Comicslate/Userstyles/raw/main/General%20purposes/DeepL%203%20Language%20Selector%20LESS%20Home.user.css
 ==/UserStyle== */
 
 @-moz-document domain("deepl.com") {
@@ -14,32 +14,16 @@
 	}
 
 	.lmt--web .lmt__sides_container {
-
-		button.lmt__language_container_switch {
-			margin-top: 0 !important;
-			top: 6px;
+		.lmt__language_select__menu_three_columns_close_button {
+			display: none;
 		}
 
 		.lmt__language_select__menu {
 			border: 0;
 			height: 30px;
+			left: 0;
+			transform: translateY(-30px);
 			width: 100%;
-
-			&[dl-test*="source"] {
-				left: 0 !important;
-
-				button {
-					width: calc(100% / 18);
-				}
-			}
-
-			&[dl-test*="target"] {
-				left: 0 !important;
-
-				button {
-					width: calc(100% / 19);
-				}
-			}
 
 			div:nth-of-type(1) {
 				display: none !important;
@@ -49,6 +33,8 @@
 				margin: 0;
 			}
 
+			&[dl-test*="source"] button { width: calc(100% / 18); }
+			&[dl-test*="target"] button { width: calc(100% / 19); }
 			button {
 				border: 1px solid #ddd;
 				border-radius: 5px;
@@ -57,10 +43,6 @@
 				line-height: normal;
 				min-width: calc(100% / 19);
 				padding: 0;
-
-				span {
-					display: none !important;
-				}
 
 				&[dl-test]::before {
 					background-repeat: no-repeat !important;
@@ -72,26 +54,25 @@
 					width: 100%;
 				}
 
-				&[dl-test*="-en"]::before	{ .back_rb ( gb ); content: 'en'; }
-				&[dl-test*="-US"]::before	{ .back_rb ( us ); }
-				&[dl-test*="-ru"]::before	{ .back_rb ( ru ); content: 'ru'; }
-				&[dl-test*="-de"]::before	{ .back_rb ( de ); content: 'de'; }
-				&[dl-test*="-fr"]::before	{ .back_rb ( fr ); content: 'fr'; }
-				&[dl-test*="-bg"]::before	{ .back_rb ( bg ); content: 'bg'; }
-				&[dl-test*="-cs"]::before	{ .back_rb ( cz ); content: 'cs'; }
-				&[dl-test*="-da"]::before	{ .back_rb ( dk ); content: 'da'; }
-				&[dl-test*="-el"]::before	{ .back_rb ( gr ); content: 'el'; }
-				&[dl-test*="-es"]::before	{ .back_rb ( es ); content: 'es'; }
-				&[dl-test*="-fi"]::before	{ .back_rb ( fi ); content: 'fi'; }
-				&[dl-test*="-hu"]::before	{ .back_rb ( hu ); content: 'hu'; }
-				&[dl-test*="-id"]::before	{ .back_rb ( id ); content: 'id'; }
-				&[dl-test*="-it"]::before	{ .back_rb ( it ); content: 'it'; }
-				&[dl-test*="-ja"]::before	{ .back_rb ( jp ); content: 'ja'; }
-				&[dl-test*="-pl"]::before	{ .back_rb ( pl ); content: 'pl'; }
-				&[dl-test*="-pt"]::before	{ .back_rb ( pt ); content: 'pt'; }
-				&[dl-test*="-tr"]::before	{ .back_rb ( tr ); content: 'tr'; }
-				&[dl-test*="-zh"]::before	{ .back_rb ( cn ); content: 'zh'; }
-				&[dl-test*="-BR"]::before	{ .back_rb ( br ); content: 'br'; }
+				&[dl-test*="-en"]::before { .back_rb ( us ); content: 'en'; }
+				&[dl-test*="-ru"]::before { .back_rb ( ru ); content: 'ru'; }
+				&[dl-test*="-de"]::before { .back_rb ( de ); content: 'de'; }
+				&[dl-test*="-fr"]::before { .back_rb ( fr ); content: 'fr'; }
+				&[dl-test*="-bg"]::before { .back_rb ( bg ); content: 'bg'; }
+				&[dl-test*="-cs"]::before { .back_rb ( cz ); content: 'cs'; }
+				&[dl-test*="-da"]::before { .back_rb ( dk ); content: 'da'; }
+				&[dl-test*="-el"]::before { .back_rb ( gr ); content: 'el'; }
+				&[dl-test*="-es"]::before { .back_rb ( es ); content: 'es'; }
+				&[dl-test*="-fi"]::before { .back_rb ( fi ); content: 'fi'; }
+				&[dl-test*="-hu"]::before { .back_rb ( hu ); content: 'hu'; }
+				&[dl-test*="-id"]::before { .back_rb ( id ); content: 'id'; }
+				&[dl-test*="-it"]::before { .back_rb ( it ); content: 'it'; }
+				&[dl-test*="-ja"]::before { .back_rb ( jp ); content: 'ja'; }
+				&[dl-test*="-pl"]::before { .back_rb ( pl ); content: 'pl'; }
+				&[dl-test*="-pt"]::before { .back_rb ( pt ); content: 'pt'; }
+				&[dl-test*="-tr"]::before { .back_rb ( tr ); content: 'tr'; }
+				&[dl-test*="-zh"]::before { .back_rb ( cn ); content: 'zh'; }
+				&[dl-test*="-BR"]::before { .back_rb ( br ); content: 'br'; }
 
 				&[dl-test*="-en"] { order: 0; }
 				&[dl-test*="-ru"] { order: 1; }
@@ -113,6 +94,7 @@
 				&[dl-test*="-zh"] { order: 18; }
 				&[dl-test*="-BR"] { order: 5; }
 
+				span,
 				&[dl-test*="-auto"],
 				&[dl-test*="en-GB"],
 				&[dl-test*="-lv"],
