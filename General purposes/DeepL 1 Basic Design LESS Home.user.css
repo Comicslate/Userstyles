@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           DeepL 1 Basic Design LESS Home
 @namespace      Comicslate
-@version        2022.06.10
+@version        2022.12.14
 @preprocessor   less
 @license        CC-BY-NC-SA-4.0
 @author         Rainbow-Spike
@@ -15,7 +15,7 @@
 		display: none !important;
 	}
 
-	main#dl_translator {
+	main#dl_translator { /* основное окно */
         max-width: 100%;
 		padding: 2px;
 	}
@@ -23,28 +23,25 @@
 		margin: 0 !important;
 	}
 
-	.lmt__language_container_switch {
+	.lmt__language_container_switch { /* стрелки <> */ 
 		height: 29px !important;
 		margin: 0 !important;
 		padding: 0 0 2px 2px !important;
-		left: -17px;
-		top: -4px;
+		left: -27px;
+		top: 0;
 		width: 29px !important;
 	}
-	.lmt__language_container {
+	.lmt__language_container { /* верхняя строка */
 		height: 25px !important;
 		.lmt__language_select__active {
 			line-height: normal !important;
 		}
 	}
 
-	.lmt__textarea_separator {
-		flex: 0 0 1px !important;
-	}
-	.lmt__textarea_container {
+	.lmt__textarea_container { /* зоны текста */
 		padding: 0 3px !important;
 	}
-	.lmt__clear_text_button_wrapper {
+	.lmt__clear_text_button_wrapper { /* знак ✘ */
 		top: 0;
 		right: 0;
 		button {
