@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           DeepL 3 Language Selector LESS Home
 @namespace      Comicslate
-@version        2022.05.26
+@version        2022.12.14
 @preprocessor   less
 @license        CC-BY-NC-SA-4.0
 @author         Rainbow-Spike
@@ -14,41 +14,36 @@
 	}
 
 	.lmt--web .lmt__sides_container {
-		.lmt__language_select__menu_three_columns_close_button {
+		.lmt__language_select__menu_three_columns_close_button { /* кнопка Закрыть */
 			display: none;
 		}
 
 		.lmt__language_select__menu {
-			border: 0;
-			height: 30px;
-			left: 0;
 			transform: translateY(-30px);
-			width: 100%;
 
-			div:nth-of-type(1) {
+			div:nth-of-type(1) { /* найти язык */
 				display: none !important;
 			}
 
-			.lmt__language_wrapper {
+			.lmt__language_wrapper { /* блок кнопок */
 				margin: 0;
 			}
 
-			&[dl-test*="source"] button { width: calc(100% / 18); }
-			&[dl-test*="target"] button { width: calc(100% / 19); }
-			button {
+			&[dl-test*="source"] button { width: calc(100% / 19); }
+			&[dl-test*="target"] button { width: calc(100% / 20); }
+			button { /* кнопки */
 				border: 1px solid #ddd;
 				border-radius: 5px;
-				color: white;
 				display: flex;
 				line-height: normal;
-				min-width: calc(100% / 19);
+				min-width: calc(100% / 20);
 				padding: 0;
 
-				&[dl-test]::before {
+				&[dl-test]::before { /* флаг */
 					background-repeat: no-repeat !important;
 					background-position: 50% 5% !important;
 					color: black;
-					font-size: 13px;
+					font-size: 15px;
 					padding-top: 9px;
 					text-align: center;
 					width: 100%;
@@ -71,6 +66,7 @@
 				&[dl-test*="-pl"]::before { .back_rb ( pl ); content: 'pl'; }
 				&[dl-test*="-pt"]::before { .back_rb ( pt ); content: 'pt'; }
 				&[dl-test*="-tr"]::before { .back_rb ( tr ); content: 'tr'; }
+				&[dl-test*="-uk"]::before { .back_rb ( ua ); content: 'uk'; }
 				&[dl-test*="-zh"]::before { .back_rb ( cn ); content: 'zh'; }
 				&[dl-test*="-BR"]::before { .back_rb ( br ); content: 'br'; }
 
@@ -91,10 +87,11 @@
 				&[dl-test*="-pl"] { order: 15; }
 				&[dl-test*="-pt"] { order: 16; }
 				&[dl-test*="-tr"] { order: 17; }
-				&[dl-test*="-zh"] { order: 18; }
+				&[dl-test*="-uk"] { order: 18; }
+				&[dl-test*="-zh"] { order: 19; }
 				&[dl-test*="-BR"] { order: 5; }
 
-				span,
+				span, /* имена языков */
 				&[dl-test*="-auto"],
 				&[dl-test*="en-GB"],
 				&[dl-test*="-lv"],
