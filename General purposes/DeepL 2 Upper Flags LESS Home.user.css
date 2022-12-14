@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           DeepL 2 Upper Flags LESS Home
 @namespace      Comicslate
-@version        2022.05.26
+@version        2022.12.14
 @preprocessor   less
 @license        CC-BY-NC-SA-4.0
 @author         Rainbow-Spike
@@ -12,8 +12,20 @@
 	.back ( @pic ) {
 		background: ~"url(https://github.com/DavideViolante/Wikipedia-Flag-Icons/raw/master/Chrome%20Extension/WikipediaFlagIcons/flags/@{pic}.png)";
 	}
-
-	div.lmt__language_select {
+	.lmt__language_container { /* верхняя строка */
+        padding: 8px 0 !important;
+        position: relative !important;
+        .lmt__side_container--source > & { /* левое окно */
+            left: -7px;
+        }
+        .lmt__side_container--target > & { /* правое окно */
+            left: -27px;
+        }
+    }
+    .lmt__language_container_switch { /* фикс для стрелок <> */
+        left: 13px !important;
+    }
+	div.lmt__language_select { /* флажок */
 		strong {
 			background-position: 0 50% !important;
 			background-repeat: no-repeat !important;
@@ -39,6 +51,7 @@
 		&[dl-selected-lang*="ja"] strong { .back ( jp ) }
 		&[dl-selected-lang*="pl"] strong { .back ( pl ) }
 		&[dl-selected-lang*="tr"] strong { .back ( tr ) }
+		&[dl-selected-lang*="uk"] strong { .back ( ua ) }
 		&[dl-selected-lang*="zh"] strong { .back ( cn ) }
 		/* остальные языки */
 		&[dl-selected-lang*="et"] strong { .back ( ee ) }
