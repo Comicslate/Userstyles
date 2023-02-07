@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           DeepL 2 Upper Flags LESS Home
 @namespace      Comicslate
-@version        2022.12.14
+@version        2023.02.07
 @preprocessor   less
 @license        CC-BY-NC-SA-4.0
 @author         Rainbow-Spike
@@ -9,8 +9,10 @@
 ==/UserStyle== */
 
 @-moz-document domain("deepl.com") {
-	.back ( @pic ) {
-		background: ~"url(https://github.com/DavideViolante/Wikipedia-Flag-Icons/raw/master/Chrome%20Extension/WikipediaFlagIcons/flags/@{pic}.png)";
+	.back ( @lng, @pic ) {
+		&[dl-selected-lang*='@{lng}'] strong {
+			background: ~ 'url(https://github.com/DavideViolante/Wikipedia-Flag-Icons/raw/master/Chrome%20Extension/WikipediaFlagIcons/flags/@{pic}.png)';
+		}
 	}
 	.lmt__language_container { /* верхняя строка */
         padding: 8px 0 !important;
@@ -32,35 +34,37 @@
 			text-indent: 20px;
 		}
 
-		&[dl-selected-lang*="en"] strong { .back ( gb ) }
-		&[dl-selected-lang*="en-US"] strong { .back ( us ) }
-		&[dl-selected-lang*="ru"] strong { .back ( ru ) }
-		&[dl-selected-lang*="de"] strong { .back ( de ) }
-		&[dl-selected-lang*="fr"] strong { .back ( fr ) }
-		&[dl-selected-lang*="bg"] strong { .back ( bg ) }
-		&[dl-selected-lang*="pt"] strong { .back ( pt ) }
-		&[dl-selected-lang*="pt-BR"] strong { .back ( br ) }
-		&[dl-selected-lang*="cs"] strong { .back ( cz ) }
-		&[dl-selected-lang*="da"] strong { .back ( dk ) }
-		&[dl-selected-lang*="el"] strong { .back ( gr ) }
-		&[dl-selected-lang*="es"] strong { .back ( es ) }
-		&[dl-selected-lang*="fi"] strong { .back ( fi ) }
-		&[dl-selected-lang*="hu"] strong { .back ( hu ) }
-		&[dl-selected-lang*="id"] strong { .back ( id ) }
-		&[dl-selected-lang*="it"] strong { .back ( it ) }
-		&[dl-selected-lang*="ja"] strong { .back ( jp ) }
-		&[dl-selected-lang*="pl"] strong { .back ( pl ) }
-		&[dl-selected-lang*="tr"] strong { .back ( tr ) }
-		&[dl-selected-lang*="uk"] strong { .back ( ua ) }
-		&[dl-selected-lang*="zh"] strong { .back ( cn ) }
+		.back ( en, gb );
+		.back ( en-US, us );
+		.back ( ru, ru );
+		.back ( de, de );
+		.back ( fr, fr );
+		.back ( bg, bg );
+		.back ( pt, pt );
+		.back ( pt-BR, br );
+		.back ( cs, cz );
+		.back ( da, dk );
+		.back ( el, gr );
+		.back ( es, es );
+		.back ( fi, fi );
+		.back ( hu, hu );
+		.back ( id, id );
+		.back ( it, it );
+		.back ( ja, jp );
+		.back ( ko, kr );
+		.back ( pl, pl );
+		.back ( tr, tr );
+		.back ( uk, ua );
+		.back ( zh, cn );
 		/* остальные языки */
-		&[dl-selected-lang*="et"] strong { .back ( ee ) }
-		&[dl-selected-lang*="lt"] strong { .back ( lt ) }
-		&[dl-selected-lang*="lv"] strong { .back ( lv ) }
-		&[dl-selected-lang*="nl"] strong { .back ( nl ) }
-		&[dl-selected-lang*="ro"] strong { .back ( ro ) }
-		&[dl-selected-lang*="sk"] strong { .back ( sk ) }
-		&[dl-selected-lang*="sl"] strong { .back ( si ) }
-		&[dl-selected-lang*="sv"] strong { .back ( se ) }
+		.back ( et, ee );
+		.back ( lt, lt );
+		.back ( lv, lv );
+		.back ( nb, nb );
+		.back ( nl, nl );
+		.back ( ro, ro );
+		.back ( sk, sk );
+		.back ( sl, si );
+		.back ( sv, se );
 	}
 }
