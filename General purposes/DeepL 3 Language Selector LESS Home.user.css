@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           DeepL 3 Language Selector LESS Home
 @namespace      Comicslate
-@version        2023.02.07
+@version        2023.04.05
 @preprocessor   less
 @license        CC-BY-NC-SA-4.0
 @author         Rainbow-Spike
@@ -11,7 +11,7 @@
 @-moz-document domain("deepl.com") {
 	@lang: 21;
 	.ins ( @lng, @pic, @cnt, @ord ) {
-		&[dl-test*='-@{lng}'] {
+		&[data-testid*='-@{lng}'] {
 			order: @ord;
 			&::before {
 				background: ~ 'url(https://github.com/DavideViolante/Wikipedia-Flag-Icons/raw/master/Chrome%20Extension/WikipediaFlagIcons/flags/@{pic}.png)';
@@ -35,8 +35,8 @@
 				margin: 0;
 			}
 
-			&[dl-test*="source"] button { width: calc(100% / (@lang - 1)); }
-			&[dl-test*="target"] button { width: calc(100% / @lang); }
+			&[data-testid*="source"] button { width: calc(100% / (@lang - 1)); }
+			&[data-testid*="target"] button { width: calc(100% / @lang); }
 			button { /* кнопки */
 				border: 1px solid #ddd;
 				border-radius: 5px;
@@ -45,7 +45,7 @@
 				min-width: calc(100% / @lang);
 				padding: 0;
 
-				&[dl-test]::before { /* флаг */
+				&[data-testid]::before { /* флаг */
 					background-repeat: no-repeat !important;
 					background-position: 50% 5% !important;
 					color: black;
@@ -77,17 +77,17 @@
 				.ins ( BR, br, br, 5 );
 
 				span, /* имена языков */
-				&[dl-test*="-auto"],
-				&[dl-test*="en-GB"],
-				&[dl-test*="-lv"],
-				&[dl-test*="-lt"],
-				&[dl-test*="-nb"],
-				&[dl-test*="-nl"],
-				&[dl-test*="-ro"],
-				&[dl-test*="-sk"],
-				&[dl-test*="-sl"],
-				&[dl-test*="-sv"],
-				&[dl-test*="-et"] {
+				&[data-testid*="-auto"],
+				&[data-testid*="en-GB"],
+				&[data-testid*="-lv"],
+				&[data-testid*="-lt"],
+				&[data-testid*="-nb"],
+				&[data-testid*="-nl"],
+				&[data-testid*="-ro"],
+				&[data-testid*="-sk"],
+				&[data-testid*="-sl"],
+				&[data-testid*="-sv"],
+				&[data-testid*="-et"] {
 					display: none !important;
 				}
 			}
