@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           DeepL 2 Upper Flags LESS Home
 @namespace      Comicslate
-@version        2023.02.07
+@version        2023.07.24
 @preprocessor   less
 @license        CC-BY-NC-SA-4.0
 @author         Rainbow-Spike
@@ -11,7 +11,7 @@
 @-moz-document domain("deepl.com") {
 	.back ( @lng, @pic ) {
 		&[dl-selected-lang*='@{lng}'] strong {
-			background: ~ 'url(https://github.com/DavideViolante/Wikipedia-Flag-Icons/raw/master/Chrome%20Extension/WikipediaFlagIcons/flags/@{pic}.png)';
+			background: ~ 'url(https://github.com/DavideViolante/Wikipedia-Flag-Icons/raw/master/Chrome%20Extension/WikipediaFlagIcons/images/flags/@{pic}.png)';
 		}
 	}
 	.lmt__language_container { /* верхняя строка */
