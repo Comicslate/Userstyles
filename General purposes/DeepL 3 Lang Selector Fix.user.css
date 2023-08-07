@@ -1,11 +1,11 @@
 /* ==UserStyle==
-@name           DeepL 3 Language Selector LESS Home
+@name           DeepL 3 Lang Selector Fix
 @namespace      Comicslate
-@version        2023.07.24
+@version        2023.8.7
 @preprocessor   less
 @license        CC-BY-NC-SA-4.0
 @author         Rainbow-Spike
-@supportURL     https://github.com/Comicslate/Userstyles/raw/main/General%20purposes/DeepL%203%20Language%20Selector%20LESS%20Home.user.css
+@supportURL     https://github.com/Comicslate/Userstyles/raw/main/General%20purposes/DeepL%203%20Lang%20Selector%20Fix.user.css
 ==/UserStyle== */
 
 @-moz-document domain("deepl.com") {
@@ -54,27 +54,27 @@
 					text-align: center;
 					width: 100%;
 				}
-				.ins ( en, us, en, 0 );
-				.ins ( ru, ru, ru, 1 );
-				.ins ( de, de, de, 2 );
-				.ins ( fr, fr, fr, 3 );
-				.ins ( bg, bg, bg, 4 );
-				.ins ( cs, cz, cs, 6 );
-				.ins ( da, dk, da, 7 );
-				.ins ( el, gr, el, 8 );
-				.ins ( es, es, es, 9 );
-				.ins ( fi, fi, fi, 10 );
-				.ins ( hu, hu, hu, 11 );
-				.ins ( id, id, id, 12 );
-				.ins ( it, it, it, 13 );
-				.ins ( ja, jp, ja, 14 );
-				.ins ( ko, kr, ko, 15 );
-				.ins ( pl, pl, pl, 16 );
-				.ins ( pt, pt, pt, 17 );
-				.ins ( tr, tr, tr, 18 );
-				.ins ( uk, ua, uk, 19 );
-				.ins ( zh, cn, zh, 20 );
-				.ins ( BR, br, br, 5 );
+				.ins ( en, us, en, 1 );
+				.ins ( ru, ru, ru, 2 );
+				.ins ( de, de, de, 3 );
+				.ins ( fr, fr, fr, 4 );
+				.ins ( bg, bg, bg, 5 );
+				.ins ( cs, cz, cs, 7 );
+				.ins ( da, dk, da, 8 );
+				.ins ( el, gr, el, 9 );
+				.ins ( es, es, es, 10 );
+				.ins ( fi, fi, fi, 11 );
+				.ins ( hu, hu, hu, 12 );
+				.ins ( id, id, id, 13 );
+				.ins ( it, it, it, 14 );
+				.ins ( ja, jp, ja, 15 );
+				.ins ( ko, kr, ko, 16 );
+				.ins ( pl, pl, pl, 17 );
+				.ins ( pt, pt, pt, 18 );
+				.ins ( tr, tr, tr, 19 );
+				.ins ( uk, ua, uk, 20 );
+				.ins ( zh, cn, zh, 21 );
+				.ins ( BR, br, br, 6 );
 
 				span, /* имена языков */
 				&[data-testid*="-auto"],
