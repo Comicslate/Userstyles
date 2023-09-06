@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           DeepL 3 Lang Selector Fix
 @namespace      Comicslate
-@version        2023.8.7
+@version        2023.9.6
 @preprocessor   less
 @license        CC-BY-NC-SA-4.0
 @author         Rainbow-Spike
@@ -9,49 +9,34 @@
 ==/UserStyle== */
 
 @-moz-document domain("deepl.com") {
-	@lang: 21;
 	.ins ( @lng, @pic, @cnt, @ord ) {
 		&[data-testid*='-@{lng}'] {
 			order: @ord;
-			&::before {
+			div::before {
 				background: ~ 'url(https://github.com/DavideViolante/Wikipedia-Flag-Icons/raw/master/Chrome%20Extension/WikipediaFlagIcons/images/flags/@{pic}.png)';
 				content: '@{cnt}';
 			}
 		}
 	}
-	.lmt--web .lmt__sides_container {
-		.lmt__language_select__menu_three_columns_close_button { /* кнопка Закрыть */
+	.border-dark-7 { /* блок */
+		padding: 0;
+		.focus-within\:border-blue-chill, /* найти язык */
+		.divide-dark-7 { /* перегородки */
 			display: none;
 		}
-
-		.lmt__language_select__menu {
-			transform: translateY(-30px);
-
-			div:nth-of-type(1) { /* найти язык */
-				display: none !important;
-			}
-
-			.lmt__language_wrapper { /* блок кнопок */
-				margin: 0;
-			}
-
-			&[data-testid*="source"] button { width: calc(100% / (@lang - 1)); }
-			&[data-testid*="target"] button { width: calc(100% / @lang); }
+		.grid-flow-col { /* список */
+			column-gap: 0;
+			grid-template-columns: auto;
+			grid-template-rows: auto !important;
 			button { /* кнопки */
 				border: 1px solid #ddd;
-				border-radius: 5px;
-				display: flex;
-				line-height: normal;
-				min-width: calc(100% / @lang);
+				border-radius: 7px;
 				padding: 0;
-
-				&[data-testid]::before { /* флаг */
+				div::before { /* флаги */
 					background-repeat: no-repeat !important;
 					background-position: 50% 5% !important;
-					color: black;
-					font-size: 15px;
+					font-size: 12px;
 					padding-top: 9px;
-					text-align: center;
 					width: 100%;
 				}
 				.ins ( en, us, en, 1 );
@@ -88,7 +73,13 @@
 				&[data-testid*="-sl"],
 				&[data-testid*="-sv"],
 				&[data-testid*="-et"] {
-					display: none !important;
+					display: none;
+				}
+				&.text-blue-chill {
+					svg { /* убрать галочку текущего языка */
+						display: none;
+					}
+				font-weight: 1000; /* ужирнить текущий язык */
 				}
 			}
 		}
