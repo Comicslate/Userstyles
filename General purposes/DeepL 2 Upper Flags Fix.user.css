@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           DeepL 2 Upper Flags Fix
 @namespace      Comicslate
-@version        2023.8.7
+@version        2023.9.6
 @preprocessor   less
 @license        CC-BY-NC-SA-4.0
 @author         Rainbow-Spike
@@ -10,25 +10,12 @@
 
 @-moz-document domain("deepl.com") {
 	.back ( @lng, @pic ) {
-		&[dl-selected-lang*='@{lng}'] strong {
+		span[dl-selected-lang*='@{lng}'] {
 			background: ~ 'url(https://github.com/DavideViolante/Wikipedia-Flag-Icons/raw/master/Chrome%20Extension/WikipediaFlagIcons/images/flags/@{pic}.png)';
 		}
 	}
-	.lmt__language_container { /* верхняя строка */
-        padding: 8px 0 !important;
-        position: relative !important;
-        .lmt__side_container--source > & { /* левое окно */
-            left: -7px;
-        }
-        .lmt__side_container--target > & { /* правое окно */
-            left: -27px;
-        }
-    }
-    .lmt__language_container_switch { /* фикс для стрелок <> */
-        left: 13px !important;
-    }
-	div.lmt__language_select { /* флажок */
-		strong {
+	div.flex-1:nth-child(3) > div:nth-child(1) { /* флажок */
+		span[dl-selected-lang] {
 			background-position: 0 50% !important;
 			background-repeat: no-repeat !important;
 			text-indent: 20px;
