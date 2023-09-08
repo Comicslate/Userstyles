@@ -1,42 +1,44 @@
 /* ==UserStyle==
 @name           DeepL 1 Basic Design Fix
 @namespace      Comicslate
-@version        2023.9.6
+@version        2023.9.8
 @preprocessor   less
 @license        CC-BY-NC-SA-4.0
 @author         Rainbow-Spike
 @supportURL     https://github.com/Comicslate/Userstyles/raw/main/General%20purposes/DeepL%201%20Basic%20Design%20Fix.user.css
 ==/UserStyle== */
 @-moz-document domain("deepl.com") {
-
 	#gatsby-focus-wrapper {
 		header,
 		footer {
-			display: none !important;
+			display: none;
 		}
 		div.relative.pr-0.false div {
-			div.w-full.bg-white.px-8.lg\:px-\[70px\] /* рекламка DeepL Write */,
+			div.px-8 /* рекламка DeepL Write */,
 			div:nth-child(4) /* нижний мотиватор */ {
-				display: none !important;
+				display: none;
 			}
-			div.min-\[1280px\]\:px-\[70px\] { /* основной фрейм */
+			div { /* основной фрейм */
 				padding: 0; /* растягиваем вширь */
 				main {
 					max-width: 100%; /* растягиваем вширь */
 					padding: 2px; /* но не до конца */
-					& > div.space-y-6 {
+					& > .space-y-6 {
 						transform: translate(0, -23px); /* подтягиваем вверх */
-						div.flex.flex-row.gap-\[10px\].px-6.min-\[1280px\]\:px-0 /* верхние кнопки: перевести текст, файлы... */ {
-							display: none !important;
+						.flex-row.px-6 /* верхние кнопки: перевести текст, файлы... */ {
+							display: none;
 						}
-						#headlessui-tabs-panel-7 > div > div.border-dark-7.border.bg-white.shadow-sm.xl\:rounded-lg > section > div {
-							& > div.relative.z-\[2\].min-\[768px\]\:col-span-3 > div { /* выбор языка */
+						.border-dark-7 > section > div {
+							& > .relative > div { /* выбор языка */
 								height: 25px;
 								min-height: 25px;
 								padding: 0;
-								& > div:nth-child(3) {
-									& > div:nth-child(5) > div.relative > span > span > span /* выбор формы обращения */ {
-										display: none !important;
+								.flex-1 button { /* обрамления кнопок */
+									padding: 0;
+								}
+								div:nth-child(3) {
+									.relative > span /* выбор формы обращения */ {
+										display: none
 									}
 									#glossary-button > div { /* кнопка Глоссарий */
 										height: 24px;
@@ -44,11 +46,14 @@
 									}
 								}
 							}
-							& > div.rounded-bl-inherit.rounded-br-inherit.grid.grid-cols-1.grid-rows-\[1fr_1fr\].min-\[768px\]\:grid-cols-\[1fr_auto_1fr\].min-\[768px\]\:grid-rows-\[1fr\].TextTranslatorLayout-module--bothareas--wXSVy {
-								& div.relative.flex-1 > d-textarea > div { /* ввод-вывод текста */
+							& > div.TextTranslatorLayout-module--bothareas--wXSVy {
+								.rounded-br-lg > div:nth-child(1) {
+									display: none; /* лайки */
+								}
+								d-textarea > div { /* ввод-вывод текста */
 									padding: 0 3px;
 								}
-								& > div.rounded-bl-inherit.relative.z-\[1\].min-h-\[240px\].min-w-0.md\:min-h-\[clamp\(250px\,50vh\,557px\)\] > section > div > div.relative.flex-1 > div.absolute.right-4.top-4 { /* поле кнопки ✘ */
+								div.right-4 { /* поле кнопки ✘ */
 									border: 1px lightgray solid;
 									height: 1.7rem;
 									right: 0;
