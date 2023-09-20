@@ -1,0 +1,69 @@
+/* ==UserStyle==
+@name			CL Little Fixes
+@version		2023.9.20
+@description	Персональные админские изменения в Комикслейте
+@preprocessor	less
+@license		CC-BY-NC-SA-4.0
+@author			Rainbow-Spike
+@namespace		Rainbow-Spike
+@supportURL     https://github.com/Comicslate/Userstyles/raw/main/Comicslate/CL%20Little%20Fixes.user.css
+==/UserStyle== */
+
+@-moz-document domain("comicslate.org") {
+	/* убрать рекламу */
+	[id*=yandex_rtb] {
+		display: none;
+	}
+
+	/* тёмная магия в медиаменеджере */
+	#mediamanager__page .filelist .rows li {
+		dl dd {
+			margin: 0 !important;
+			padding: 0 2px;
+			border-left: 1px solid #999
+		}
+		dt {
+			width: 50px;
+		}
+		.name {
+			width: calc(100% - 296px);
+		}
+		.size {
+			width: 65px;
+		}
+		.date {
+			width: 107px;
+		}
+		.filesize {
+			width: 54px;
+		}
+	}
+
+	/* прятать аппрувы */
+	.approved_revision {
+		display: none;
+	}
+	form.changes ul li {
+		border-bottom: 0 !important;
+	}
+
+	/* пиктограммы крупнее */
+	#tool__bar button {
+		transform: scale(1.5);
+	}
+
+	/* разравниватель кнопок */
+	.editButtons * {
+		width: 106px;
+	}
+
+	/* фильтр для Фрифола */
+	.freefall .plugin_translation {
+		.be, .el, .eo, .he, .hi, .id, .it, .ko, .sib, .sjn, .tr {
+			display: none;
+			/*a.wikilink2 {
+				opacity: 0.05;
+			}*/
+		}
+	}
+}
