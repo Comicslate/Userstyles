@@ -12,7 +12,7 @@
 	.ins ( @lng, @pic, @cnt, @ord ) {
 		&[data-testid*='-@{lng}'] {
 			order: @ord;
-			div.w-full::before { {
+			div.w-full::before {
 				background: ~ 'url(https://github.com/DavideViolante/Wikipedia-Flag-Icons/raw/master/Chrome%20Extension/WikipediaFlagIcons/images/flags/@{pic}.png)';
 				content: '@{cnt}';
 			}
