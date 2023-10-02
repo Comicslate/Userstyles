@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           DeepL 1 Basic Design Fix
 @namespace      Comicslate
-@version        2023.9.8
+@version        2023.10.02
 @preprocessor   less
 @license        CC-BY-NC-SA-4.0
 @author         Rainbow-Spike
@@ -15,7 +15,7 @@
 		}
 		div.relative.pr-0.false div {
 			div.px-8 /* рекламка DeepL Write */,
-			div:nth-child(4) /* нижний мотиватор */ {
+			div.p-8 /* нижний мотиватор */ {
 				display: none;
 			}
 			div { /* основной фрейм */
@@ -23,13 +23,13 @@
 				main {
 					max-width: 100%; /* растягиваем вширь */
 					padding: 2px; /* но не до конца */
-					& > .space-y-6 {
+					> .space-y-6 {
 						transform: translate(0, -23px); /* подтягиваем вверх */
 						.flex-row.px-6 /* верхние кнопки: перевести текст, файлы... */ {
 							display: none;
 						}
 						.border-dark-7 > section > div {
-							& > .relative > div { /* выбор языка */
+							> .relative > div { /* выбор языка */
 								height: 25px;
 								min-height: 25px;
 								padding: 0;
@@ -46,9 +46,17 @@
 									}
 								}
 							}
-							& > div.TextTranslatorLayout-module--bothareas--wXSVy {
-								.rounded-br-lg > div:nth-child(1) {
-									display: none; /* лайки */
+							> div.TextTranslatorLayout-module--bothareas--wXSVy {
+                                .rounded-bl-lg { /* нижние значки слева */
+									display: none;
+								}
+                                .rounded-br-lg { /* нижние значки справа */
+                                    > * {
+                                        display: none;
+                                    }
+                                    div:nth-last-child(2) { /* кроме копирования */
+                                        display: block !important;
+                                    }
 								}
 								d-textarea > div { /* ввод-вывод текста */
 									padding: 0 3px;
