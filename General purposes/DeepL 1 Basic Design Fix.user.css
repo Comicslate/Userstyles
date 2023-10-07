@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           DeepL 1 Basic Design Fix
 @namespace      Comicslate
-@version        2023.10.07
+@version        2023.10.07/1
 @preprocessor   less
 @license        CC-BY-NC-SA-4.0
 @author         Rainbow-Spike
@@ -26,19 +26,13 @@
     .lmt__target_toolbar div:nth-last-child(4) { /* кроме копирования */
         display: block !important;
     }
-	main#dl_translator { /* основное окно */
+    main#dl_translator { /* основное окно */
         max-width: 100%; /* растягиваем вширь */
-		padding: 2px; /* но не до конца */
+        padding: 2px; /* но не до конца */
         .lmt__sides_container {
             margin: 0 !important; /* подтягиваем вверх */
             .lmt__language_container { /* верхняя строка */
                 height: 25px !important;
-                .lmt__language_container_switch { /* стрелки <> */ 
-                    margin: 0 !important;
-                    padding: 0 0 2px 2px !important;
-                    left: -27px;
-                    width: 29px !important;
-                }
             }
             .lmt__textarea_container { /* ввод-вывод текста */
                 padding: 0 3px !important;
@@ -51,7 +45,7 @@
                 }
             }
         }
-	}
+    }
 
     /* НОВЫЙ ДИЗАЙН */
     div.relative.pr-0.false div {
