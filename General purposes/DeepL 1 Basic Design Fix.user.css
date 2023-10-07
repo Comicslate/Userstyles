@@ -1,82 +1,122 @@
 /* ==UserStyle==
 @name           DeepL 1 Basic Design Fix
 @namespace      Comicslate
-@version        2023.10.02
+@version        2023.10.07
 @preprocessor   less
 @license        CC-BY-NC-SA-4.0
 @author         Rainbow-Spike
 @supportURL     https://github.com/Comicslate/Userstyles/raw/main/General%20purposes/DeepL%201%20Basic%20Design%20Fix.user.css
 ==/UserStyle== */
 @-moz-document domain("deepl.com") {
-	#gatsby-focus-wrapper {
-		header,
-		footer {
-			display: none;
-		}
-		div.relative.pr-0.false div {
-			div.px-8 /* рекламка DeepL Write */,
-			div.p-8 /* нижний мотиватор */ {
-				display: none;
-			}
-			div { /* основной фрейм */
-				padding: 0; /* растягиваем вширь */
-				main {
-					max-width: 100%; /* растягиваем вширь */
-					padding: 2px; /* но не до конца */
-					> .space-y-6 {
-						transform: translate(0, -23px); /* подтягиваем вверх */
-						.flex-row.px-6 /* верхние кнопки: перевести текст, файлы... */ {
-							display: none;
-						}
-						.border-dark-7 > section > div {
-							> .relative > div { /* выбор языка */
-								height: 25px;
-								min-height: 25px;
-								padding: 0;
-								.flex-1 button { /* обрамления кнопок */
-									padding: 0;
-								}
-								div:nth-child(3) {
-									.relative > span /* выбор формы обращения */ {
-										display: none
-									}
-									#glossary-button > div { /* кнопка Глоссарий */
-										height: 24px;
-										padding: 0 5px;
-									}
-								}
-							}
-							> div.TextTranslatorLayout-module--bothareas--wXSVy {
-                                .rounded-bl-lg { /* нижние значки слева */
-									display: none;
-								}
-                                .rounded-br-lg { /* нижние значки справа */
-                                    > * {
-                                        display: none;
-                                    }
-                                    div:nth-last-child(2) { /* кроме копирования */
-                                        display: block !important;
-                                    }
-								}
-								d-textarea > div { /* ввод-вывод текста */
-									padding: 0 3px;
-								}
-								div.right-4 { /* поле кнопки ✘ */
-									border: 1px lightgray solid;
-									height: 1.7rem;
-									right: 0;
-									top: 0;
-									#translator-source-clear-button { /* кнопка ✘ */
-										height: 1.5rem;
-										padding: 0;
-										width: 1.5rem;
-									}
-								}
-							}
-						}
-					}
-				}
-			}
-		}
+    header,
+    footer {
+        display: none;
+    }
+
+    /* СТАРЫЙ ДИЗАЙН */
+    .lmt__target_toolbar > *, /* нижние значки справа */
+    .dl_ad_pro_container, /* рекламка DeepL Write */
+    #dl_quotes_container { /* нижний мотиватор */
+        display: none;
+    }
+    .lmt__docTrans-tab-container, /* верхние кнопки: перевести текст, файлы... */
+    .lmt__language_container_sec { /* кнопки Автоматически и Глоссарий */
+        display: none !important;
+    }
+    .lmt__target_toolbar div:nth-last-child(4) { /* кроме копирования */
+        display: block !important;
+    }
+	main#dl_translator { /* основное окно */
+        max-width: 100%; /* растягиваем вширь */
+		padding: 2px; /* но не до конца */
+        .lmt__sides_container {
+            margin: 0 !important; /* подтягиваем вверх */
+            .lmt__language_container { /* верхняя строка */
+                height: 25px !important;
+                .lmt__language_container_switch { /* стрелки <> */ 
+                    margin: 0 !important;
+                    padding: 0 0 2px 2px !important;
+                    left: -27px;
+                    width: 29px !important;
+                }
+            }
+            .lmt__textarea_container { /* ввод-вывод текста */
+                padding: 0 3px !important;
+            }
+            .lmt__clear_text_button_wrapper { /* кнопка ✘ */
+                top: 0;
+                right: 0;
+                button {
+                    border: 1px lightgray solid;
+                }
+            }
+        }
 	}
+
+    /* НОВЫЙ ДИЗАЙН */
+    div.relative.pr-0.false div {
+        div.px-8, /* рекламка DeepL Write */
+        div.p-8 /* нижний мотиватор */ {
+            display: none;
+        }
+        div { /* основной фрейм */
+            padding: 0; /* растягиваем вширь */
+            main {
+                max-width: 100%; /* растягиваем вширь */
+                padding: 2px; /* но не до конца */
+                > .space-y-6 {
+                    transform: translate(0, -23px); /* подтягиваем вверх */
+                    .flex-row.px-6 /* верхние кнопки: перевести текст, файлы... */ {
+                        display: none;
+                    }
+                    .border-dark-7 > section > div {
+                        > .relative > div { /* выбор языка */
+                            height: 25px;
+                            min-height: 25px;
+                            padding: 0;
+                            .flex-1 button { /* обрамления кнопок */
+                                padding: 0;
+                            }
+                            div:nth-child(3) {
+                                .relative > span /* выбор формы обращения */ {
+                                    display: none
+                                }
+                                #glossary-button > div { /* кнопка Глоссарий */
+                                    height: 24px;
+                                    padding: 0 5px;
+                                }
+                            }
+                        }
+                        > div.TextTranslatorLayout-module--bothareas--wXSVy {
+                            .rounded-bl-lg { /* нижние значки слева */
+                                display: none;
+                            }
+                            .rounded-br-lg { /* нижние значки справа */
+                                > * {
+                                    display: none;
+                                }
+                                div:nth-last-child(2) { /* кроме копирования */
+                                    display: block !important;
+                                }
+                            }
+                            d-textarea > div { /* ввод-вывод текста */
+                                padding: 0 3px;
+                            }
+                            div.right-4 { /* поле кнопки ✘ */
+                                border: 1px lightgray solid;
+                                height: 1.7rem;
+                                right: 0;
+                                top: 0;
+                                #translator-source-clear-button { /* кнопка ✘ */
+                                    height: 1.5rem;
+                                    padding: 0;
+                                    width: 1.5rem;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
 }
