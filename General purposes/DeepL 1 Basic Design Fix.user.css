@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           DeepL 1 Basic Design Fix
 @namespace      Comicslate
-@version        2023.10.07.1
+@version        2023.10.07.2
 @preprocessor   less
 @license        CC-BY-NC-SA-4.0
 @author         Rainbow-Spike
@@ -16,7 +16,8 @@
     /* СТАРЫЙ ДИЗАЙН */
     .lmt__target_toolbar > *, /* нижние значки справа */
     .dl_ad_pro_container, /* рекламка DeepL Write */
-    #dl_quotes_container { /* нижний мотиватор */
+    #dl_quotes_container, /* нижний мотиватор */
+    .eSEOtericText { /* лозунг */
         display: none;
     }
     .lmt__docTrans-tab-container, /* верхние кнопки: перевести текст, файлы... */
