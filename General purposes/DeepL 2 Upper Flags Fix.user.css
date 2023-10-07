@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           DeepL 2 Upper Flags Fix
 @namespace      Comicslate
-@version        2023.9.6
+@version        2023.10.7
 @preprocessor   less
 @license        CC-BY-NC-SA-4.0
 @author         Rainbow-Spike
@@ -9,49 +9,50 @@
 ==/UserStyle== */
 
 @-moz-document domain("deepl.com") {
-	.back ( @lng, @pic ) {
-		span[dl-selected-lang*='@{lng}'] {
-			background: ~ 'url(https://github.com/DavideViolante/Wikipedia-Flag-Icons/raw/master/Chrome%20Extension/WikipediaFlagIcons/images/flags/@{pic}.png)';
-		}
-	}
-	div.flex-1:nth-child(3) > div:nth-child(1) { /* флажок */
-		span[dl-selected-lang] {
-			background-position: 0 50% !important;
-			background-repeat: no-repeat !important;
-			text-indent: 20px;
-		}
+    .back ( @lng, @pic ) {
+        &[dl-selected-lang*='@{lng}'] strong, span[dl-selected-lang*='@{lng}'] {
+            background: ~ 'url(https://github.com/DavideViolante/Wikipedia-Flag-Icons/raw/master/Chrome%20Extension/WikipediaFlagIcons/images/flags/@{pic}.png)';
+        }
 
-		.back ( en, gb );
-		.back ( en-US, us );
-		.back ( ru, ru );
-		.back ( de, de );
-		.back ( fr, fr );
-		.back ( bg, bg );
-		.back ( pt, pt );
-		.back ( pt-BR, br );
-		.back ( cs, cz );
-		.back ( da, dk );
-		.back ( el, gr );
-		.back ( es, es );
-		.back ( fi, fi );
-		.back ( hu, hu );
-		.back ( id, id );
-		.back ( it, it );
-		.back ( ja, jp );
-		.back ( ko, kr );
-		.back ( pl, pl );
-		.back ( tr, tr );
-		.back ( uk, ua );
-		.back ( zh, cn );
-		/* остальные языки */
-		.back ( et, ee );
-		.back ( lt, lt );
-		.back ( lv, lv );
-		.back ( nb, nb );
-		.back ( nl, nl );
-		.back ( ro, ro );
-		.back ( sk, sk );
-		.back ( sl, si );
-		.back ( sv, se );
-	}
+    }
+    div.lmt__language_select, div.flex-1:nth-child(3) > div:nth-child(1) { /* флажок */
+        strong, span[dl-selected-lang] {
+            background-position: 0 50% !important;
+            background-repeat: no-repeat !important;
+            text-indent: 20px;
+        }
+
+        .back ( en, gb );
+        .back ( en-US, us );
+        .back ( ru, ru );
+        .back ( de, de );
+        .back ( fr, fr );
+        .back ( bg, bg );
+        .back ( pt, pt );
+        .back ( pt-BR, br );
+        .back ( cs, cz );
+        .back ( da, dk );
+        .back ( el, gr );
+        .back ( es, es );
+        .back ( fi, fi );
+        .back ( hu, hu );
+        .back ( id, id );
+        .back ( it, it );
+        .back ( ja, jp );
+        .back ( ko, kr );
+        .back ( pl, pl );
+        .back ( tr, tr );
+        .back ( uk, ua );
+        .back ( zh, cn );
+        /* остальные языки */
+        .back ( et, ee );
+        .back ( lt, lt );
+        .back ( lv, lv );
+        .back ( nb, nb );
+        .back ( nl, nl );
+        .back ( ro, ro );
+        .back ( sk, sk );
+        .back ( sl, si );
+        .back ( sv, se );
+    }
 }
