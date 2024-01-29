@@ -1,13 +1,16 @@
 /* ==UserStyle==
 @name           DeepL 1 Basic Design Fix
 @namespace      Comicslate
-@version        2023.10.07.3
+@version        2024.01.29
 @preprocessor   less
 @license        CC-BY-NC-SA-4.0
 @author         Rainbow-Spike
 @supportURL     https://github.com/Comicslate/Userstyles/raw/main/General%20purposes/DeepL%201%20Basic%20Design%20Fix.user.css
 ==/UserStyle== */
 @-moz-document domain("deepl.com") {
+    html {
+        overflow-x: hidden;
+    }
     header,
     footer {
         display: none;
@@ -61,11 +64,11 @@
                 padding: 2px; /* но не до конца */
                 > .space-y-6 {
                     transform: translate(0, -23px); /* подтягиваем вверх */
-                    .flex-row.px-6 /* верхние кнопки: перевести текст, файлы... */ {
+                    .flex.px-6 /* верхние кнопки: перевести текст, файлы... */ {
                         display: none;
                     }
                     .border-dark-7 > section > div {
-                        > .relative > div { /* выбор языка */
+                        > .relative:not(#textareasContainer) > div { /* выбор языка */
                             height: 25px;
                             min-height: 25px;
                             padding: 0;
