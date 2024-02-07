@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           DeepL 1 Basic Design Fix
 @namespace      Comicslate
-@version        2024.01.29
+@version        2024.02.07
 @preprocessor   less
 @license        CC-BY-NC-SA-4.0
 @author         Rainbow-Spike
@@ -54,6 +54,7 @@
     /* НОВЫЙ ДИЗАЙН */
     div.relative.pr-0.false div {
         div.px-8, /* рекламка DeepL Write */
+        div.w-full.bg-white, /* приложения DeepL */
         div.p-8 /* нижний мотиватор */ {
             display: none;
         }
