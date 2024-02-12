@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           DeepL 1 Basic Design Fix
 @namespace      Comicslate
-@version        2024.02.07
+@version        2024.02.12
 @preprocessor   less
 @license        CC-BY-NC-SA-4.0
 @author         Rainbow-Spike
@@ -70,8 +70,8 @@
                     }
                     .border-dark-7 > section > div {
                         > .relative:not(#textareasContainer) > div { /* выбор языка */
-                            height: 25px;
-                            min-height: 25px;
+                            height: 35px;
+                            min-height: 35px;
                             padding: 0;
                             .flex-1 button { /* обрамления кнопок */
                                 padding: 0;
