@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           DeepL 3 Lang Selector Fix
 @namespace      Comicslate
-@version        2023.10.18
+@version        2024.02.28
 @preprocessor   less
 @license        CC-BY-NC-SA-4.0
 @author         Rainbow-Spike
@@ -58,6 +58,7 @@
             span, /* имена языков */
             &[data-testid*="-auto"],
             &[data-testid*="en-GB"],
+            &[data-testid*="-ar"],
             &[data-testid*="-lv"],
             &[data-testid*="-lt"],
             &[data-testid*="-nb"],
