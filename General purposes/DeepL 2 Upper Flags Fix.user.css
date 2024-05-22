@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           DeepL 2 Upper Flags Fix
 @namespace      Comicslate
-@version        2023.10.07
+@version        2024.05.22
 @preprocessor   less
 @license        CC-BY-NC-SA-4.0
 @author         Rainbow-Spike
@@ -15,11 +15,14 @@
         }
 
     }
-    div.lmt__language_select, div.flex-1:nth-child(3) > div:nth-child(1) { /* флажок */
+	div.flex-1:nth-child(3) {
+		border: 10px;
+	}
+    div.lmt__language_select, div.min-w-0.flex-1 { /* флажок */
         strong, span[dl-selected-lang] {
-            background-position: 0 50% !important;
+            background-position: 0 55% !important;
             background-repeat: no-repeat !important;
-            text-indent: 20px;
+			padding-left: 20px;
         }
 
         .back ( en, gb );
