@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           DeepL 1 Basic Design Fix
 @namespace      Comicslate
-@version        2024.02.28
+@version        2024.05.22
 @preprocessor   less
 @license        CC-BY-NC-SA-4.0
 @author         Rainbow-Spike
@@ -52,7 +52,7 @@
     }
 
     /* НОВЫЙ ДИЗАЙН */
-    div.relative.pr-0.false div {
+    div.relative.pe-0.false div {
         div.px-8, /* рекламка DeepL Write */
         div.w-full.bg-white:not(.border), /* приложения DeepL */
         div.p-8 /* нижний мотиватор */ {
@@ -69,16 +69,23 @@
                         display: none;
                     }
                     .border-dark-7 > section > div {
-                        > .relative:not(#textareasContainer) > div { /* выбор языка */
+                        > .relative:not(#textareasContainer) > div { /* выбор языков */
                             height: 35px;
                             min-height: 35px;
-                            padding: 0;
-                            .flex-1 button { /* обрамления кнопок */
-                                padding: 0;
+							.mx-1 { /* стрелка <- ->*/
+								margin: 0;
+								button {
+									height: 32px;
+									padding: 3px;
+									width: 32px;
+								}
+							}
+                            .flex-1 button { /* обрамления кнопок выбора */
+                                padding: 0 5px;
                             }
                             div:nth-child(3) {
                                 .relative > span /* выбор формы обращения */ {
-                                    display: none
+                                    display: none;
                                 }
                                 #glossary-button > div { /* кнопка Глоссарий */
                                     height: 24px;
@@ -87,10 +94,10 @@
                             }
                         }
                         > div.TextTranslatorLayout-module--bothareas--wXSVy {
-                            .rounded-bl-lg { /* нижние значки слева */
+							.rounded-es-lg { /* нижние значки слева */
                                 display: none;
                             }
-                            .rounded-br-lg { /* нижние значки справа */
+                            .rounded-ee-lg { /* нижние значки справа */
                                 > * {
                                     display: none;
                                 }
