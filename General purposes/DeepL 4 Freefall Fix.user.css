@@ -1,7 +1,7 @@
 /* ==UserStyle==
-@name           DeepL 4 Freefall Fix
+@name           ✔ DeepL 4 Freefall Fix
 @namespace      Comicslate
-@version        2023.10.07
+@version        2024.06.28
 @preprocessor   less
 @license        CC-BY-NC-SA-4.0
 @author         Rainbow-Spike
@@ -10,7 +10,7 @@
 
 @-moz-document domain("deepl.com") {
     @lang: 16;
-    .lmt--web .lmt__sides_container .lmt__language_select__menu, .border-dark-7 .grid-flow-col {
+    .lmt--web .lmt__sides_container .lmt__language_select__menu, section .grid-cols-3 {
         button { /* кнопки */
             &[data-testid*="-el"],
             &[data-testid*="-id"],
