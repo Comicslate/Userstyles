@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           ✔ DeepL 3 Lang Selector Fix
 @namespace      Comicslate
-@version        2024.06.09
+@version        2024.06.28
 @preprocessor   less
 @license        CC-BY-NC-SA-4.0
 @author         Rainbow-Spike
@@ -19,7 +19,7 @@
             }
         }
     }
-    .lmt--web .lmt__sides_container .lmt__language_select__menu, .grid-flow-col {
+    .lmt--web .lmt__sides_container .lmt__language_select__menu, .grid-cols-3 {
         button { /* кнопки */
             border: 1px solid #ddd;
             border-radius: 7px;
@@ -108,18 +108,18 @@
     }
 
     /* НОВЫЙ ДИЗАЙН */
-    .border-dark-7 { /* блок */
+    section { /* блок */
         padding: 0;
         .focus-within\:border-blue-next-500, /* найти язык */
         .divide-dark-7 { /* перегородки */
             display: none;
         }
-        .grid-flow-col { /* список */
+        .grid-cols-3 { /* список */
             column-gap: 0;
             grid-template-columns: auto;
             grid-template-rows: auto !important;
             button { /* кнопки */
-                &.text-blue-chill {
+                &.text-blue-next-500 {
                     svg { /* убрать галочку текущего языка */
                         display: none;
                     }
