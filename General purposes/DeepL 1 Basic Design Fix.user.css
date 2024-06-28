@@ -1,7 +1,7 @@
 /* ==UserStyle==
-@name           DeepL 1 Basic Design Fix
+@name           ✔ DeepL 1 Basic Design Fix
 @namespace      Comicslate
-@version        2024.05.22
+@version        2024.06.28
 @preprocessor   less
 @license        CC-BY-NC-SA-4.0
 @author         Rainbow-Spike
@@ -68,7 +68,7 @@
                     .flex.px-6 /* верхние кнопки: перевести текст, файлы... */ {
                         display: none;
                     }
-                    .border-dark-7 > section > div {
+                    section > div {
                         > .relative:not(#textareasContainer) > div { /* выбор языков */
                             height: 35px;
                             min-height: 35px;
@@ -84,7 +84,7 @@
                                 padding: 0 5px;
                             }
                             div:nth-child(3) {
-                                .relative > span /* выбор формы обращения */ {
+                                :not(.lmt__glossaryButton).relative > span /* выбор формы обращения */ {
                                     display: none;
                                 }
                                 #glossary-button > div { /* кнопка Глоссарий */
