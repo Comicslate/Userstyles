@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           ✔ DeepL 3 Lang Selector Fix
 @namespace      Comicslate
-@version        2024.06.28
+@version        2024.07.26
 @preprocessor   less
 @license        CC-BY-NC-SA-4.0
 @author         Rainbow-Spike
@@ -13,7 +13,7 @@
     .ins ( @lng, @pic, @cnt, @ord ) {
         &[data-testid*='-@{lng}'] {
             order: @ord;
-            /*&::before,*/ div.w-full::before {
+            div.w-full::before {
                 background: ~ 'url(https://github.com/DavideViolante/Wikipedia-Flag-Icons/raw/master/Chrome%20Extension/WikipediaFlagIcons/images/flags/@{pic}.png)';
                 content: '@{cnt}';
             }
@@ -73,45 +73,13 @@
         }
     }
 
-    /* СТАРЫЙ ДИЗАЙН */
-    @lang: 21;
-    .lmt--web .lmt__sides_container {
-        .lmt__language_select__menu_three_columns_close_button { /* кнопка Закрыть */
-            display: none;
-        }
-        .lmt__language_select__menu {
-            transform: translateY(-30px);
-            div:nth-of-type(1) { /* найти язык */
-                display: none;
-            }
-            .lmt__language_wrapper { /* блок кнопок */
-                margin: 0;
-            }
-            &[data-testid*="source"] button {
-                width: calc(100% / (@lang - 1));
-            }
-            &[data-testid*="target"] button {
-                width: calc(100% / @lang);
-            }
-            button { /* кнопки */
-                display: flex;
-                line-height: normal;
-                min-width: calc(100% / @lang);
-                &[data-testid]::before { /* флаги */
-                    text-align: center;
-                }
-                &[aria-selected=true] {
-                    font-weight: 1000; /* ужирнить текущий язык */
-                }
-            }
-        }
-    }
 
     /* НОВЫЙ ДИЗАЙН */
     section { /* блок */
         padding: 0;
         .focus-within\:border-blue-next-500, /* найти язык */
-        .divide-dark-7 { /* перегородки */
+        .divide-dark-7, /* перегородки */
+        svg.shrink-0 { /* иконка микрофон */
             display: none;
         }
         .grid-cols-3 { /* список */
