@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           ✔ DeepL 1 Basic Design Fix
 @namespace      Comicslate
-@version        2024.06.28
+@version        2024.08.11
 @preprocessor   less
 @license        CC-BY-NC-SA-4.0
 @author         Rainbow-Spike
@@ -12,52 +12,16 @@
         overflow-x: hidden;
     }
     header,
+    div.border-neutral-next-100.fixed,
+    nav.border-neutral-next-100.sticky,
+    div.px-8, /* рекламка DeepL Write */
+    div.w-full.bg-white:not(.border), /* приложения DeepL */
+    div.p-8, /* нижний мотиватор */
     footer {
         display: none;
     }
 
-    /* СТАРЫЙ ДИЗАЙН */
-    .lmt__target_toolbar > *, /* нижние значки справа */
-    .dl_ad_pro_container, /* рекламка DeepL Write */
-    #dl_quotes_container { /* нижний мотиватор */
-        display: none;
-    }
-    .lmt__docTrans-tab-container, /* верхние кнопки: перевести текст, файлы... */
-    .lmt__language_container_sec, /* кнопки Автоматически и Глоссарий */
-    .eSEOtericText { /* лозунг */
-        display: none !important;
-    }
-    .lmt__target_toolbar div:nth-last-child(4) { /* кроме копирования */
-        display: block !important;
-    }
-    main#dl_translator { /* основное окно */
-        max-width: 100%; /* растягиваем вширь */
-        padding: 2px; /* но не до конца */
-        .lmt__sides_container {
-            margin: 0 !important; /* подтягиваем вверх */
-            .lmt__language_container { /* верхняя строка */
-                height: 25px !important;
-            }
-            .lmt__textarea_container { /* ввод-вывод текста */
-                padding: 0 3px !important;
-            }
-            .lmt__clear_text_button_wrapper { /* кнопка ✘ */
-                top: 0;
-                right: 0;
-                button {
-                    border: 1px lightgray solid;
-                }
-            }
-        }
-    }
-
-    /* НОВЫЙ ДИЗАЙН */
-    div.relative.pe-0.false div {
-        div.px-8, /* рекламка DeepL Write */
-        div.w-full.bg-white:not(.border), /* приложения DeepL */
-        div.p-8 /* нижний мотиватор */ {
-            display: none;
-        }
+    div.relative.pe-0 {
         div { /* основной фрейм */
             padding: 0; /* растягиваем вширь */
             main {
