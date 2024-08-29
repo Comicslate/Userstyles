@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           ✔ DeepL 1 Basic Design Fix
 @namespace      Comicslate
-@version        2024.08.11
+@version        2024.08.29
 @preprocessor   less
 @license        CC-BY-NC-SA-4.0
 @author         Rainbow-Spike
@@ -21,13 +21,13 @@
         display: none;
     }
 
-    div.relative.pe-0 {
+    div.relative.pe-0:not(.USER_SCRIPT_MARKER) {
         div { /* основной фрейм */
             padding: 0; /* растягиваем вширь */
             main {
                 max-width: 100%; /* растягиваем вширь */
                 padding: 2px; /* но не до конца */
-                > .space-y-6 {
+                .space-y-6 {
                     transform: translate(0, -23px); /* подтягиваем вверх */
                     .flex.px-6 /* верхние кнопки: перевести текст, файлы... */ {
                         display: none;
