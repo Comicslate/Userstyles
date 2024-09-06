@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           ✔ DeepL 3 Lang Selector Fix
 @namespace      Comicslate
-@version        2024.08.11
+@version        2024.09.07
 @preprocessor   less
 @license        CC-BY-NC-SA-4.0
 @author         Rainbow-Spike
@@ -86,11 +86,12 @@
             grid-template-rows: auto !important;
             button { /* кнопки */
                 &.text-blue-next-500 {
-                    svg { /* убрать галочку текущего языка */
-                        display: none;
-                    }
-                font-weight: 1000; /* ужирнить текущий язык */
+	                font-weight: 1000; /* ужирнить текущий язык */
                 }
+				svg { /* убрать текущий язык и микрофон */
+					display: none;
+				}
+
             }
         }
     }
