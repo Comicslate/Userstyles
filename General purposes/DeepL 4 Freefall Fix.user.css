@@ -1,13 +1,12 @@
 /* ==UserStyle==
 @name           ✔ DeepL 4 Freefall Fix
-@namespace      Comicslate
-@version        2024.06.28
+@version        2024.11.01
 @preprocessor   less
 @license        CC-BY-NC-SA-4.0
 @author         Rainbow-Spike
+@namespace		Rainbow-Spike
 @supportURL     https://github.com/Comicslate/Userstyles/raw/main/General%20purposes/DeepL%204%20Freefall%20Fix.user.css
 ==/UserStyle== */
-
 @-moz-document domain("deepl.com") {
     @lang: 16;
     .lmt--web .lmt__sides_container .lmt__language_select__menu, section .grid-cols-3 {
