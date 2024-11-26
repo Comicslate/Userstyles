@@ -1,6 +1,6 @@
 /* ==UserStyle==
 @name           ✔ DeepL 1 Basic Design Fix
-@version		2024.11.01
+@version		2024.11.26
 @preprocessor   less
 @license        CC-BY-NC-SA-4.0
 @author         Rainbow-Spike
@@ -18,7 +18,7 @@
     div.w-full.bg-white:not(.border), /* приложения DeepL */
     div.p-8, /* нижний мотиватор */
     footer {
-        display: none;
+        display: none !important;
     }
 
     div.relative.pe-0:not(.USER_SCRIPT_MARKER) {
@@ -29,11 +29,11 @@
                 padding: 2px; /* но не до конца */
                 .space-y-6 {
                     transform: translate(0, -23px); /* подтягиваем вверх */
-                    .flex.px-6 /* верхние кнопки: перевести текст, файлы... */ {
+                    .flex.px-5 /* верхние кнопки: перевести текст, файлы... */ {
                         display: none;
                     }
                     section > div {
-                        > .relative:not(#textareasContainer) > div { /* выбор языков */
+                        > .relative:not(#textareasContainer) > .relative { /* выбор языков */
                             height: 35px;
                             min-height: 35px;
 							.mx-1 { /* стрелка <- ->*/
@@ -57,31 +57,29 @@
                                 }
                             }
                         }
-                        > div.TextTranslatorLayout-module--bothareas--wXSVy {
-							.rounded-es-lg { /* нижние значки слева */
+                        .rounded-es-lg { /* нижние значки слева */
+                            display: none;
+                        }
+                        .rounded-ee-lg { /* нижние значки справа */
+                            > * {
                                 display: none;
                             }
-                            .rounded-ee-lg { /* нижние значки справа */
-                                > * {
-                                    display: none;
-                                }
-                                div:nth-last-child(2) { /* кроме копирования */
-                                    display: block !important;
-                                }
+                            div:nth-last-child(3) { /* кроме копирования */
+                                display: block !important;
                             }
-                            d-textarea > div { /* ввод-вывод текста */
-                                padding: 0 3px;
-                            }
-                            div.right-4 { /* поле кнопки ✘ */
-                                border: 1px lightgray solid;
-                                height: 1.7rem;
-                                right: 0;
-                                top: 0;
-                                #translator-source-clear-button { /* кнопка ✘ */
-                                    height: 1.5rem;
-                                    padding: 0;
-                                    width: 1.5rem;
-                                }
+                        }
+                        d-textarea > div { /* ввод-вывод текста */
+                            padding: 0 3px;
+                        }
+                        div.right-4 { /* поле кнопки ✘ */
+                            border: 1px lightgray solid;
+                            height: 1.7rem;
+                            right: 0;
+                            top: 0;
+                            #translator-source-clear-button { /* кнопка ✘ */
+                                height: 1.5rem;
+                                padding: 0;
+                                width: 1.5rem;
                             }
                         }
                     }
