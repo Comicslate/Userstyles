@@ -1,13 +1,12 @@
 /* ==UserStyle==
 @name           ✔ DeepL 3 Lang Selector Fix
-@namespace      Comicslate
-@version        2024.09.07
+@version        2024.11.01
 @preprocessor   less
 @license        CC-BY-NC-SA-4.0
 @author         Rainbow-Spike
+@namespace		Rainbow-Spike
 @supportURL     https://github.com/Comicslate/Userstyles/raw/main/General%20purposes/DeepL%203%20Lang%20Selector%20Fix.user.css
 ==/UserStyle== */
-
 @-moz-document domain("deepl.com") {
     /* УНИФИКАТ */
     .ins ( @lng, @pic, @cnt, @ord ) {
@@ -86,12 +85,11 @@
             grid-template-rows: auto !important;
             button { /* кнопки */
                 &.text-blue-next-500 {
-	                font-weight: 1000; /* ужирнить текущий язык */
+                    svg { /* убрать галочку текущего языка */
+                        display: none;
+                    }
+                font-weight: 1000; /* ужирнить текущий язык */
                 }
-				svg { /* убрать текущий язык и микрофон */
-					display: none;
-				}
-
             }
         }
     }
