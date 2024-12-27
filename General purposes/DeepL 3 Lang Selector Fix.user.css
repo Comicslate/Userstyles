@@ -1,6 +1,6 @@
 /* ==UserStyle==
 @name           ✔ DeepL 3 Lang Selector Fix
-@version        2024.11.01
+@version        2024.12.27
 @preprocessor   less
 @license        CC-BY-NC-SA-4.0
 @author         Rainbow-Spike
@@ -74,7 +74,7 @@
 
     section { /* блок */
         padding: 0;
-        .focus-within\:border-blue-next-500, /* найти язык */
+        .mb-3.px-3.py-2, /* найти язык */
         .space-x-2, /* лайки */
         [data-testid="translator-target-toolbar-share-popup"] { /* поделиться */
             display: none !important;
