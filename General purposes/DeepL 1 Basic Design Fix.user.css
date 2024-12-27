@@ -1,6 +1,6 @@
 /* ==UserStyle==
 @name           ✔ DeepL 1 Basic Design Fix
-@version		2024.11.26
+@version        2024.12.27
 @preprocessor   less
 @license        CC-BY-NC-SA-4.0
 @author         Rainbow-Spike
@@ -8,35 +8,44 @@
 @supportURL     https://github.com/Comicslate/Userstyles/raw/main/General%20purposes/DeepL%201%20Basic%20Design%20Fix.user.css
 ==/UserStyle== */
 @-moz-document domain("deepl.com") {
-    html {
-        overflow-x: hidden;
-    }
-    header,
-    div.border-neutral-next-100.fixed,
-    nav.border-neutral-next-100.sticky,
-    div.px-8, /* рекламка DeepL Write */
-    div.w-full.bg-white:not(.border), /* приложения DeepL */
-    div.p-8, /* нижний мотиватор */
-    footer {
-        display: none !important;
-    }
+	[data-testid="product-navigation-sidebar-container"],
+	/* сайдбар */
+	header,
+	/* шапка */
+	.flex.items-center.justify-between,
+	/* языки, файлы, ИИ */
+	.TextTranslatorLayout-module--topBorderOfVisibleTranslator--dfae7,
+	/* отбивка */
+	button.bg-blue-50,
+	/* перейти в Write */
+	div.w-full.bg-white:not(.border),
+	/* приложения DeepL */
+	div.p-8,
+	/* нижний мотиватор */
+	footer {
+		display: none !important;
+	}
 
-    div.relative.pe-0:not(.USER_SCRIPT_MARKER) {
-        div { /* основной фрейм */
-            padding: 0; /* растягиваем вширь */
-            main {
-                max-width: 100%; /* растягиваем вширь */
-                padding: 2px; /* но не до конца */
-                .space-y-6 {
-                    transform: translate(0, -23px); /* подтягиваем вверх */
-                    .flex.px-5 /* верхние кнопки: перевести текст, файлы... */ {
-                        display: none;
-                    }
-                    section > div {
-                        > .relative:not(#textareasContainer) > .relative { /* выбор языков */
-                            height: 35px;
-                            min-height: 35px;
-							.mx-1 { /* стрелка <- ->*/
+	div.relative.pe-0:not(.USER_SCRIPT_MARKER) {
+		div {
+		/* основной фрейм */
+			padding: 0;
+			/* растягиваем вширь */
+			main {
+				max-width: 100%;
+				/* растягиваем вширь */
+				padding: 2px;
+				/* но не до конца */
+				.space-y-6 {
+					transform: translate(0, -23px);
+					/* подтягиваем вверх */
+					section > div {
+						> .relative:not(#textareasContainer) > .relative {
+						/* выбор языков */
+							height: 35px;
+							min-height: 35px;
+							.mx-1 {
+							/* стрелка <- ->*/
 								margin: 0;
 								button {
 									height: 32px;
@@ -44,47 +53,59 @@
 									width: 32px;
 								}
 							}
-                            .flex-1 button { /* обрамления кнопок выбора */
-                                padding: 0 5px;
-                            }
-                            div:nth-child(3) {
-                                :not(.lmt__glossaryButton).relative > span /* выбор формы обращения */ {
-                                    display: none;
-                                }
-                                #glossary-button > div { /* кнопка Глоссарий */
-                                    height: 24px;
-                                    padding: 0 5px;
-                                }
-                            }
-                        }
-                        .rounded-es-lg { /* нижние значки слева */
-                            display: none;
-                        }
-                        .rounded-ee-lg { /* нижние значки справа */
-                            > * {
-                                display: none;
-                            }
-                            div:nth-last-child(3) { /* кроме копирования */
-                                display: block !important;
-                            }
-                        }
-                        d-textarea > div { /* ввод-вывод текста */
-                            padding: 0 3px;
-                        }
-                        div.right-4 { /* поле кнопки ✘ */
-                            border: 1px lightgray solid;
-                            height: 1.7rem;
-                            right: 0;
-                            top: 0;
-                            #translator-source-clear-button { /* кнопка ✘ */
-                                height: 1.5rem;
-                                padding: 0;
-                                width: 1.5rem;
-                            }
-                        }
-                    }
-                }
-            }
-        }
-    }
+							.flex-1 button {
+							/* обрамления кнопок выбора */
+								padding: 0 5px;
+							}
+							div:nth-child(3) {
+								:not(.lmt__glossaryButton).relative > span {
+								/* выбор формы обращения */
+									display: none;
+								}
+								#glossary-button > div {
+								/* кнопка Глоссарий */
+									height: 24px;
+									padding: 0 5px;
+								}
+							}
+						}
+						.rounded-es-lg {
+						/* нижние значки слева */
+							display: none;
+						}
+						.rounded-ee-lg {
+						/* нижние значки справа */
+							> * {
+								display: none;
+							}
+							div:nth-last-child(2) {
+							/* кроме копирования */
+								display: block;
+								padding-left: 5px;
+								* {
+									padding: 0;
+								}
+							}
+						}
+						d-textarea > div {
+						/* ввод-вывод текста */
+							padding: 0 3px;
+						}
+						div.end-4 {
+						/* поле кнопки ✘ */
+							border: 1px lightgray solid;
+							height: 1.6rem;
+							right: -1px;
+							top: 0;
+							#translator-source-clear-button {
+							/* кнопка ✘ */
+								padding: 0 !important;
+								width: 1.4rem !important;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
 }
