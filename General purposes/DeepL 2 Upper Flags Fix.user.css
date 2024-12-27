@@ -1,6 +1,6 @@
 /* ==UserStyle==
 @name           ✔ DeepL 2 Upper Flags Fix
-@version        2024.11.01
+@version        2024.12.27
 @preprocessor   less
 @license        CC-BY-NC-SA-4.0
 @author         Rainbow-Spike
@@ -14,9 +14,6 @@
         }
 
     }
-	div.flex-1:nth-child(3) {
-		border: 10px;
-	}
     div.lmt__language_select, div.min-w-0 { /* флажок */
         strong, [dl-selected-lang] {
             background-position: 0 55% !important;
