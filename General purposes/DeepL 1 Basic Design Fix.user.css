@@ -1,106 +1,125 @@
 /* ==UserStyle==
 @name           ✔ DeepL 1 Basic Design Fix
-@version        2024.12.27
+@version        2025.06.19
 @preprocessor   less
 @license        CC-BY-NC-SA-4.0
 @author         Rainbow-Spike
-@namespace		Rainbow-Spike
+@namespace      Rainbow-Spike
 @supportURL     https://github.com/Comicslate/Userstyles/raw/main/General%20purposes/DeepL%201%20Basic%20Design%20Fix.user.css
 ==/UserStyle== */
 @-moz-document domain("deepl.com") {
-	[data-testid="product-navigation-sidebar-container"],
-	/* сайдбар */
 	header,
 	/* шапка */
 	.flex.items-center.justify-between,
 	/* языки, файлы, ИИ */
-	.TextTranslatorLayout-module--topBorderOfVisibleTranslator--dfae7,
-	/* отбивка */
-	button.bg-blue-50,
-	/* перейти в Write */
 	div.w-full.bg-white:not(.border),
 	/* приложения DeepL */
+	[data-testid="glossary-options-toggle"],
+	/* выбор формы обращения */
+	.rounded-es-lg,
+	/* нижние значки слева */
 	div.p-8,
 	/* нижний мотиватор */
-	footer {
+	footer
+	{
 		display: none !important;
 	}
 
-	div.relative.pe-0:not(.USER_SCRIPT_MARKER) {
-		div {
+	div.relative:not(.USER_SCRIPT_MARKER)
+	{
+		div
 		/* основной фрейм */
+		{
 			padding: 0;
 			/* растягиваем вширь */
-			main {
-				max-width: 100%;
+
+			main
+			{
+				max-width: 100% !important;
 				/* растягиваем вширь */
 				padding: 2px;
 				/* но не до конца */
-				.space-y-6 {
-					transform: translate(0, -23px);
-					/* подтягиваем вверх */
-					section > div {
-						> .relative:not(#textareasContainer) > .relative {
-						/* выбор языков */
-							height: 35px;
-							min-height: 35px;
-							.mx-1 {
-							/* стрелка <- ->*/
-								margin: 0;
-								button {
-									height: 32px;
-									padding: 3px;
-									width: 32px;
+				transform: translate(0, -23px);
+
+				div[data-layout-id="translatorArea"]
+				{
+					max-width: 100% !important;
+					padding-inline-end: 0 !important;
+					padding-inline-start: 0 !important;
+
+					div[data-layout-id="textTranslatorPanel"]
+					{
+						max-width: 100% !important;
+
+						section > div
+						{
+							> div:not(#textareasContainer) > div.relative
+							/* выбор языков */
+							{
+								max-width: 100%;
+								min-height: 35px;
+								padding-inline-end: 0;
+								padding-inline-start: 0;
+
+								.mx-1,
+								/* стрелка <- ->*/
+								.flex-1 button
+								/* обрамления кнопок выбора */
+								{
+									padding: 0 3px;
 								}
+/*								div:nth-child(3)
+								{
+									#glossary-button > div*/
+									/* кнопка Глоссарий */
+/*									{
+										height: 24px;
+										padding: 0 5px;
+									}
+								}*/
 							}
-							.flex-1 button {
-							/* обрамления кнопок выбора */
-								padding: 0 5px;
-							}
-							div:nth-child(3) {
-								:not(.lmt__glossaryButton).relative > span {
-								/* выбор формы обращения */
-									display: none;
+							div#textareasContainer
+							/* зона текстов */
+							{
+								d-textarea
+								{
+									padding: 0 2px;
+									padding-inline-end: 0;
+									padding-inline-start: 0;
+									
+									> div
+									/* ввод-вывод текста */
+									{
+										max-width: 100%;
+										padding: 0 3px;
+									}
 								}
-								#glossary-button > div {
-								/* кнопка Глоссарий */
-									height: 24px;
-									padding: 0 5px;
+								div[data-layout-id="sourceTextareaTopCornerButton"]
+								/* поле кнопки ✘ */
+								{
+									border: 1px lightgray solid;
+									height: 1.6rem;
+									right: -1px;
+									top: 0;
+
+									#translator-source-clear-button
+									/* кнопка ✘ */
+									{
+										padding: 0 !important;
+										width: 1.4rem !important;
+									}
 								}
-							}
-						}
-						.rounded-es-lg {
-						/* нижние значки слева */
-							display: none;
-						}
-						.rounded-ee-lg {
-						/* нижние значки справа */
-							> * {
-								display: none;
-							}
-							div:nth-last-child(2) {
-							/* кроме копирования */
-								display: block;
-								padding-left: 5px;
-								* {
-									padding: 0;
+								.rounded-ee-lg
+								/* нижние значки справа */
+								{
+									padding-inline-end: 0;
+									padding-inline-start: 0;
+
+									> span, > div.flex, > div.flex-1, > div.TargetTranslatorToolbar-module--ratingButtons--529bf, div.mobile\:block
+									{
+										display: none;
+									}
 								}
-							}
-						}
-						d-textarea > div {
-						/* ввод-вывод текста */
-							padding: 0 3px;
-						}
-						div.end-4 {
-						/* поле кнопки ✘ */
-							border: 1px lightgray solid;
-							height: 1.6rem;
-							right: -1px;
-							top: 0;
-							#translator-source-clear-button {
-							/* кнопка ✘ */
-								padding: 0 !important;
-								width: 1.4rem !important;
 							}
 						}
 					}
