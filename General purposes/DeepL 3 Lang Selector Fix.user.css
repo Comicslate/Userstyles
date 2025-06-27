@@ -1,6 +1,6 @@
 /* ==UserStyle==
 @name           ✔ DeepL 3 Lang Selector Fix
-@version        2025.06.27.1
+@version        2025.06.27.2
 @preprocessor   less
 @license        CC-BY-NC-SA-4.0
 @author         Rainbow-Spike
@@ -52,7 +52,7 @@
             .ins ( pt, pt, pt, 19 );
             .ins ( tr, tr, tr, 20 );
             .ins ( uk, ua, uk, 21 );
-            .ins ( Hans, cn, zh, 22 );
+            .ins ( zh, cn, zh, 22 );
             .ins ( BR, br, br, 6 );
 
             span, /* имена языков */
