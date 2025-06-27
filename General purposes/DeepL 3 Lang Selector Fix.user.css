@@ -1,6 +1,6 @@
 /* ==UserStyle==
 @name           ✔ DeepL 3 Lang Selector Fix
-@version        2025.06.27
+@version        2025.06.27.1
 @preprocessor   less
 @license        CC-BY-NC-SA-4.0
 @author         Rainbow-Spike
@@ -87,12 +87,10 @@
             column-gap: 0;
             grid-template-columns: auto;
             grid-template-rows: auto !important;
-            button { /* кнопки */
-                &.text-blue-next-500 {
-                    svg { /* убрать галочку текущего языка */
-                        display: none;
-                    }
-                font-weight: 1000; /* ужирнить текущий язык */
+            button { /* выбранный язык */
+                &[aria-selected="true"] {
+                    background-color: #fec;
+                    font-weight: 1000;
                 }
             }
         }
