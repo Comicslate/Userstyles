@@ -1,6 +1,6 @@
 /* ==UserStyle==
 @name           ✔ DeepL 2 Upper Flags Fix
-@version        2024.12.27
+@version        2025.06.27
 @preprocessor   less
 @license        CC-BY-NC-SA-4.0
 @author         Rainbow-Spike
@@ -34,6 +34,7 @@
         .back ( el, gr );
         .back ( es, es );
         .back ( fi, fi );
+        .back ( he, il );
         .back ( hu, hu );
         .back ( id, id );
         .back ( it, it );
@@ -53,5 +54,6 @@
         .back ( sk, sk );
         .back ( sl, si );
         .back ( sv, se );
+        .back ( vi, vn );
     }
 }
