@@ -1,6 +1,6 @@
 /* ==UserStyle==
 @name           ✔ DeepL 1 Basic Design Fix
-@version        2025.06.19
+@version        2025.06.27
 @preprocessor   less
 @license        CC-BY-NC-SA-4.0
 @author         Rainbow-Spike
@@ -8,18 +8,13 @@
 @supportURL     https://github.com/Comicslate/Userstyles/raw/main/General%20purposes/DeepL%201%20Basic%20Design%20Fix.user.css
 ==/UserStyle== */
 @-moz-document domain("deepl.com") {
-	header,
-	/* шапка */
-	.flex.items-center.justify-between,
-	/* языки, файлы, ИИ */
-	div.w-full.bg-white:not(.border),
-	/* приложения DeepL */
-	[data-testid="glossary-options-toggle"],
-	/* выбор формы обращения */
-	.rounded-es-lg,
-	/* нижние значки слева */
-	div.p-8,
-	/* нижний мотиватор */
+	header, /* шапка */
+	.flex.items-center.justify-between, /* языки, файлы, ИИ */
+	div.w-full.bg-white:not(.border), /* приложения DeepL */
+	[data-layout-id="systemErrorMessageSection"], /* сообщение об ошибке */
+	[data-testid="glossary-options-toggle"], /* выбор формы обращения */
+	.rounded-es-lg, /* нижние значки слева */
+	div.p-8, /* нижний мотиватор */
 	footer
 	{
 		display: none !important;
