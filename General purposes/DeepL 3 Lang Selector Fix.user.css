@@ -1,6 +1,6 @@
 /* ==UserStyle==
 @name           ✔ DeepL 3 Lang Selector Fix
-@version        2024.12.27
+@version        2025.06.27
 @preprocessor   less
 @license        CC-BY-NC-SA-4.0
 @author         Rainbow-Spike
@@ -42,31 +42,35 @@
             .ins ( el, gr, el, 9 );
             .ins ( es, es, es, 10 );
             .ins ( fi, fi, fi, 11 );
-            .ins ( hu, hu, hu, 12 );
-            .ins ( id, id, id, 13 );
-            .ins ( it, it, it, 14 );
-            .ins ( ja, jp, ja, 15 );
-            .ins ( ko, kr, ko, 16 );
-            .ins ( pl, pl, pl, 17 );
-            .ins ( pt, pt, pt, 18 );
-            .ins ( tr, tr, tr, 19 );
-            .ins ( uk, ua, uk, 20 );
-            .ins ( zh, cn, zh, 21 );
+            .ins ( he, il, he, 12 );
+            .ins ( hu, hu, hu, 13 );
+            .ins ( id, id, id, 14 );
+            .ins ( it, it, it, 15 );
+            .ins ( ja, jp, ja, 16 );
+            .ins ( ko, kr, ko, 17 );
+            .ins ( pl, pl, pl, 18 );
+            .ins ( pt, pt, pt, 19 );
+            .ins ( tr, tr, tr, 20 );
+            .ins ( uk, ua, uk, 21 );
+            .ins ( Hans, cn, zh, 22 );
             .ins ( BR, br, br, 6 );
 
             span, /* имена языков */
             &[data-testid*="-auto"],
-            &[data-testid*="en-GB"],
             &[data-testid*="-ar"],
-            &[data-testid*="-lv"],
+            &[data-testid*="en-GB"],
+            &[data-testid*="-et"],
             &[data-testid*="-lt"],
+            &[data-testid*="-lv"],
             &[data-testid*="-nb"],
             &[data-testid*="-nl"],
             &[data-testid*="-ro"],
             &[data-testid*="-sk"],
             &[data-testid*="-sl"],
             &[data-testid*="-sv"],
-            &[data-testid*="-et"] {
+            &[data-testid*="-vi"],
+            &[data-testid*="-Hant"],
+             {
                 display: none !important;
             }
         }
