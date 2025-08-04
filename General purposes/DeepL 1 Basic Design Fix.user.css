@@ -1,6 +1,6 @@
 /* ==UserStyle==
 @name           ✔ DeepL 1 Basic Design Fix
-@version        2025.06.27
+@version        2025.08.05
 @preprocessor   less
 @license        CC-BY-NC-SA-4.0
 @author         Rainbow-Spike
@@ -10,11 +10,11 @@
 @-moz-document domain("deepl.com") {
 	header, /* шапка */
 	.flex.items-center.justify-between, /* языки, файлы, ИИ */
-	div.w-full.bg-white:not(.border), /* приложения DeepL */
-	[data-layout-id="systemErrorMessageSection"], /* сообщение об ошибке */
-	[data-testid="glossary-options-toggle"], /* выбор формы обращения */
+/*	[data-layout-id="systemErrorMessageSection"], /* сообщение об ошибке */
+/*	[data-testid="glossary-options-toggle"], /* выбор формы обращения */
 	.rounded-es-lg, /* нижние значки слева */
-	div.p-8, /* нижний мотиватор */
+/*	div.p-8, /* нижний мотиватор */
+    .\[\.is-home_\&\]\:hidden, /* мегареклама */
 	footer
 	{
 		display: none !important;
