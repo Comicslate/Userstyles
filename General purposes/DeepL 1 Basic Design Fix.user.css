@@ -1,6 +1,6 @@
 /* ==UserStyle==
 @name           ✔ DeepL 1 Basic Design Fix
-@version        2025.08.05
+@version        2025.08.12
 @preprocessor   less
 @license        CC-BY-NC-SA-4.0
 @author         Rainbow-Spike
@@ -10,10 +10,7 @@
 @-moz-document domain("deepl.com") {
 	header, /* шапка */
 	.flex.items-center.justify-between, /* языки, файлы, ИИ */
-/*	[data-layout-id="systemErrorMessageSection"], /* сообщение об ошибке */
-/*	[data-testid="glossary-options-toggle"], /* выбор формы обращения */
 	.rounded-es-lg, /* нижние значки слева */
-/*	div.p-8, /* нижний мотиватор */
     .\[\.is-home_\&\]\:hidden, /* мегареклама */
 	footer
 	{
@@ -42,84 +39,79 @@
 					padding-inline-end: 0 !important;
 					padding-inline-start: 0 !important;
 
-					div[data-layout-id="textTranslatorPanel"]
-					{
-						max-width: 100% !important;
+                    section > div
+                    {
+                        > div:not(#textareasContainer) > div.relative
+                        /* выбор языков */
+                        {
+                            max-width: 100%;
+                            min-height: 35px;
+                            padding-inline-end: 0;
+                            padding-inline-start: 0;
 
-						section > div
-						{
-							> div:not(#textareasContainer) > div.relative
-							/* выбор языков */
-							{
-								max-width: 100%;
-								min-height: 35px;
-								padding-inline-end: 0;
-								padding-inline-start: 0;
-
-								.mx-1,
-								/* стрелка <- ->*/
-								.flex-1 button
-								/* обрамления кнопок выбора */
-								{
-									padding: 0 3px;
-								}
+                            .mx-1,
+                            /* стрелка <- ->*/
+                            .flex-1 button
+                            /* обрамления кнопок выбора */
+                            {
+                                padding: 0 3px;
+                            }
 /*								div:nth-child(3)
-								{
-									#glossary-button > div*/
-									/* кнопка Глоссарий */
+                            {
+                                #glossary-button > div*/
+                                /* кнопка Глоссарий */
 /*									{
-										height: 24px;
-										padding: 0 5px;
-									}
-								}*/
-							}
-							div#textareasContainer
-							/* зона текстов */
-							{
-								d-textarea
-								{
-									padding: 0 2px;
-									padding-inline-end: 0;
-									padding-inline-start: 0;
-									
-									> div
-									/* ввод-вывод текста */
-									{
-										max-width: 100%;
-										padding: 0 3px;
-									}
-								}
-								div[data-layout-id="sourceTextareaTopCornerButton"]
-								/* поле кнопки ✘ */
-								{
-									border: 1px lightgray solid;
-									height: 1.6rem;
-									right: -1px;
-									top: 0;
+                                    height: 24px;
+                                    padding: 0 5px;
+                                }
+                            }*/
+                        }
+                        div#textareasContainer
+                        /* зона текстов */
+                        {
+                            d-textarea
+                            {
+                                padding: 0 2px;
+                                padding-inline-end: 0;
+                                padding-inline-start: 0;
 
-									#translator-source-clear-button
-									/* кнопка ✘ */
-									{
-										padding: 0 !important;
-										width: 1.4rem !important;
-									}
-								}
-								.rounded-ee-lg
-								/* нижние значки справа */
-								{
-									padding-inline-end: 0;
-									padding-inline-start: 0;
+                                > div
+                                /* ввод-вывод текста */
+                                {
+                                    max-width: 100%;
+                                    padding: 0 3px;
+                                }
+                            }
+                            div[data-layout-id="sourceTextareaTopCornerButton"]
+                            /* поле кнопки ✘ */
+                            {
+                                border: 1px lightgray solid;
+                                height: 1.6rem;
+                                right: -1px;
+                                top: 0;
 
-									> span, > div.flex, > div.flex-1, > div.TargetTranslatorToolbar-module--ratingButtons--529bf, div.mobile\:block
-									{
-										display: none;
-									}
-								}
-							}
-						}
-					}
-				}
-			}
-		}
+                                #translator-source-clear-button
+                                /* кнопка ✘ */
+                                {
+                                    padding: 0 !important;
+                                    width: 1.4rem !important;
+                                }
+                            }
+                            .rounded-ee-lg
+                            /* нижние значки справа */
+                            {
+                                padding-inline-end: 0;
+                                padding-inline-start: 0;
+
+                                > span, > div.flex, > div.flex-1, > div.TargetTranslatorToolbar-module--ratingButtons--529bf, div.mobile\:block
+                                {
+                                    display: none;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
 	}
 }
