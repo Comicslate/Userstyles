@@ -1,6 +1,6 @@
 /* ==UserStyle==
 @name           ✔ DeepL 3 Lang Selector Fix
-@version        2025.06.27.2
+@version        2025.08.24
 @preprocessor   less
 @license        CC-BY-NC-SA-4.0
 @author         Rainbow-Spike
@@ -8,7 +8,6 @@
 @supportURL     https://github.com/Comicslate/Userstyles/raw/main/General%20purposes/DeepL%203%20Lang%20Selector%20Fix.user.css
 ==/UserStyle== */
 @-moz-document domain("deepl.com") {
-    /* УНИФИКАТ */
     .ins ( @lng, @pic, @cnt, @ord ) {
         &[data-testid*='-@{lng}'] {
             order: @ord;
@@ -18,11 +17,11 @@
             }
         }
     }
-    .lmt--web .lmt__sides_container .lmt__language_select__menu, .grid-cols-3 {
+    .grid-cols-3 {
         button { /* кнопки */
             border: 1px solid #ddd;
             border-radius: 7px;
-            padding: 0;
+            padding-top: 4px !important;
             &[data-testid], div.w-full {
                 &::before { /* флаги */
                     background-repeat: no-repeat !important;
@@ -77,10 +76,12 @@
     }
 
     section { /* блок */
-        padding: 0;
-        .mb-3.px-3.py-2, /* найти язык */
-        .space-x-2, /* лайки */
-        [data-testid="translator-target-toolbar-share-popup"] { /* поделиться */
+        [data-layout-id="sourceLanguagePopover"],
+        [data-layout-id="targetLanguagePopover"] {
+            padding: 0;
+        }
+        .mb-3.px-3.py-2 /* найти язык */
+        {
             display: none !important;
         }
         .grid-cols-3 { /* список */
