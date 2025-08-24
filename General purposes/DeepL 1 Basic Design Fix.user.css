@@ -1,6 +1,6 @@
 /* ==UserStyle==
 @name           ✔ DeepL 1 Basic Design Fix
-@version        2025.08.24
+@version        2025.08.24.1
 @preprocessor   less
 @license        CC-BY-NC-SA-4.0
 @author         Rainbow-Spike
@@ -10,7 +10,7 @@
 @-moz-document domain("deepl.com") {
     /* ГЛАВНАЯ РЕЗНЯ */
 	header, /* шапка */
-	.justify-between, /* языки, файлы, ИИ */
+	.flex.items-center.justify-between, /* языки, файлы, ИИ */
     .\[\.is-home_\&\]\:hidden, /* мегареклама */
 	footer
 	{
