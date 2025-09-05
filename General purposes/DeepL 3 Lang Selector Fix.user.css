@@ -1,29 +1,49 @@
 /* ==UserStyle==
 @name           ✔ DeepL 3 Lang Selector Fix
-@version        2025.08.24
+@version        2025.09.06
 @preprocessor   less
 @license        CC-BY-NC-SA-4.0
 @author         Rainbow-Spike
 @namespace		Rainbow-Spike
 @supportURL     https://github.com/Comicslate/Userstyles/raw/main/General%20purposes/DeepL%203%20Lang%20Selector%20Fix.user.css
 ==/UserStyle== */
-@-moz-document domain("deepl.com") {
-    .ins ( @lng, @pic, @cnt, @ord ) {
-        &[data-testid*='-@{lng}'] {
+@-moz-document domain("deepl.com")
+{
+    .ins ( @lng, @pic, @cnt, @ord )
+    {
+        &[data-testid*='-@{lng}']
+        {
             order: @ord;
-            div.w-full::before {
+            div.w-full::before
+            {
                 background: ~ 'url(https://github.com/DavideViolante/Wikipedia-Flag-Icons/raw/master/Chrome%20Extension/WikipediaFlagIcons/images/flags/@{pic}.png)';
                 content: '@{cnt}';
             }
         }
     }
-    .grid-cols-3 {
-        button { /* кнопки */
+    .mb-3.px-3.py-2 /* найти язык */
+    {
+        display: none !important;
+    }
+    .grid-cols-3
+    {
+        column-gap: 0;
+        grid-template-columns: auto;
+        grid-template-rows: auto !important;
+        button /* кнопки */
+        {
             border: 1px solid #ddd;
             border-radius: 7px;
             padding-top: 4px !important;
-            &[data-testid], div.w-full {
-                &::before { /* флаги */
+            &[aria-selected="true"] /* выбранный язык */
+            {
+                background-color: #fec;
+                font-weight: 1000;
+            }
+            &[data-testid], div.w-full
+            {
+                &::before /* флаги */
+                {
                     background-repeat: no-repeat !important;
                     background-position: 50% 5% !important;
                     font-size: 14px;
@@ -74,26 +94,9 @@
             }
         }
     }
-
-    section { /* блок */
-        [data-layout-id="sourceLanguagePopover"],
-        [data-layout-id="targetLanguagePopover"] {
-            padding: 0;
-        }
-        .mb-3.px-3.py-2 /* найти язык */
-        {
-            display: none !important;
-        }
-        .grid-cols-3 { /* список */
-            column-gap: 0;
-            grid-template-columns: auto;
-            grid-template-rows: auto !important;
-            button { /* выбранный язык */
-                &[aria-selected="true"] {
-                    background-color: #fec;
-                    font-weight: 1000;
-                }
-            }
-        }
+    [data-layout-id="sourceLanguagePopover"],
+    [data-layout-id="targetLanguagePopover"]
+    {
+        padding: 0;
     }
 }
