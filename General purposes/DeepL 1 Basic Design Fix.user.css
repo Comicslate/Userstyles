@@ -1,18 +1,18 @@
 /* ==UserStyle==
 @name           ✔ DeepL 1 Basic Design Fix
-@version        2025.08.24.1
+@version        2025.09.06
 @preprocessor   less
 @license        CC-BY-NC-SA-4.0
 @author         Rainbow-Spike
 @namespace      Rainbow-Spike
 @supportURL     https://github.com/Comicslate/Userstyles/raw/main/General%20purposes/DeepL%201%20Basic%20Design%20Fix.user.css
 ==/UserStyle== */
-@-moz-document domain("deepl.com") {
+@-moz-document domain("deepl.com")
+{
     /* ГЛАВНАЯ РЕЗНЯ */
-	header, /* шапка */
-	.flex.items-center.justify-between, /* языки, файлы, ИИ */
-    .\[\.is-home_\&\]\:hidden, /* мегареклама */
-	footer
+    [data-layout-id="translatorSidePanel"], /* боковая панель */
+    [data-layout-id="translatorTabList"], /* языки, файлы, ИИ */
+    .\[\.is-home_\&\]\:hidden /* мегареклама */
 	{
 		display: none;
 	}
@@ -66,7 +66,7 @@
     [data-layout-id="sourceTextareaTopCornerButton"]
     {
         border: 1px lightgray solid;
-        right: -1px;
+        inset-inline-end: -1px !important;
         top: 0;
 
         #translator-source-clear-button
