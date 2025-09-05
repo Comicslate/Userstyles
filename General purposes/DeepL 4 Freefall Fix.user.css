@@ -1,31 +1,23 @@
 /* ==UserStyle==
 @name           ✔ DeepL 4 Freefall Fix
-@version        2024.11.01
+@version        2025.09.06
 @preprocessor   less
 @license        CC-BY-NC-SA-4.0
 @author         Rainbow-Spike
 @namespace		Rainbow-Spike
 @supportURL     https://github.com/Comicslate/Userstyles/raw/main/General%20purposes/DeepL%204%20Freefall%20Fix.user.css
 ==/UserStyle== */
-@-moz-document domain("deepl.com") {
-    @lang: 16;
-    .lmt--web .lmt__sides_container .lmt__language_select__menu, section .grid-cols-3 {
-        button { /* кнопки */
-            &[data-testid*="-el"],
-            &[data-testid*="-id"],
-            &[data-testid*="-it"],
-            &[data-testid*="-ko"],
-            &[data-testid*="-tr"] {
-                display: none;
-            }
-        }
-    }
-    .lmt--web .lmt__sides_container .lmt__language_select__menu {
-        &[data-testid*="source"] button {
-            width: calc(100% / (@lang - 1));
-        }
-        button { /* кнопки */
-            min-width: calc(100% / @lang);
+@-moz-document domain("deepl.com")
+{
+    .grid-cols-3 button
+    {
+        &[data-testid*="-el"],
+        &[data-testid*="-id"],
+        &[data-testid*="-it"],
+        &[data-testid*="-ko"],
+        &[data-testid*="-tr"]
+        {
+            display: none;
         }
     }
 }
