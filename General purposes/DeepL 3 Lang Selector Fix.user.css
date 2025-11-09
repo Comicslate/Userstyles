@@ -1,6 +1,6 @@
 /* ==UserStyle==
 @name           ✔ DeepL 3 Lang Selector Fix
-@version        2025.09.06
+@version        2025.11.09
 @preprocessor   less
 @license        CC-BY-NC-SA-4.0
 @author         Rainbow-Spike
@@ -9,10 +9,18 @@
 ==/UserStyle== */
 @-moz-document domain("deepl.com")
 {
+    /* языков стало слишком много для перечисления на вылет */
+    /* проще погасить всё */
+    [data-testid*="lang-option"], [data-testid*="es-419"] /* латиноиспанский гасим особо */
+    {
+        display: none !important;
+    }
+    /* а потом включить и украсить нужное */
     .ins ( @lng, @pic, @cnt, @ord )
     {
-        &[data-testid*='-@{lng}']
+        &[data-testid*="lang-option-@{lng}"]
         {
+            display: block !important;
             order: @ord;
             div.w-full::before
             {
@@ -21,28 +29,55 @@
             }
         }
     }
-    .mb-3.px-3.py-2 /* найти язык */
+    .ins ( en-US, us, en, 1 );
+    .ins ( ru, ru, ru, 2 );
+    .ins ( de, de, de, 3 );
+    .ins ( fr, fr, fr, 4 );
+    .ins ( bg, bg, bg, 5 );
+    .ins ( pt-BR, br, br, 6 );
+    .ins ( cs, cz, cs, 7 );
+    .ins ( da, dk, da, 8 );
+    .ins ( el, gr, el, 9 );
+    .ins ( es, es, es, 10 );
+    .ins ( fi, fi, fi, 11 );
+    .ins ( he, il, he, 12 );
+    .ins ( hu, hu, hu, 13 );
+    .ins ( id, id, id, 14 );
+    .ins ( it, it, it, 15 );
+    .ins ( ja, jp, ja, 16 );
+    .ins ( ko, kr, ko, 17 );
+    .ins ( pl, pl, pl, 18 );
+    .ins ( pt-PT, pt, pt, 19 );
+    .ins ( tr, tr, tr, 20 );
+    .ins ( uk, ua, uk, 21 );
+    .ins ( zh-Hans, cn, zh, 22 );
+
+    [data-layout-id*="LanguagePopover"]
     {
-        display: none !important;
-    }
-    .grid-cols-3
-    {
-        column-gap: 0;
-        grid-template-columns: auto;
-        grid-template-rows: auto !important;
-        button /* кнопки */
+        padding: 0;
+        /* удаление поиска языка, пояснений, предложки языков и трёхколоночной сетки */
+        .py-3, h3, div :nth-child(2) .relative, .relative > :nth-child(1)
         {
-            border: 1px solid #ddd;
-            border-radius: 7px;
-            padding-top: 4px !important;
-            &[aria-selected="true"] /* выбранный язык */
+            display: none !important;
+        }
+        /* общая стилизация панели кнопок */
+        [role="listbox"]
+        {
+            column-gap: 0;
+            grid-template-columns: auto;
+            grid-template-rows: auto !important;
+            button
             {
-                background-color: #fec;
-                font-weight: 1000;
-            }
-            &[data-testid], div.w-full
-            {
-                &::before /* флаги */
+                border: 1px solid #ddd;
+                border-radius: 10px 20px;
+                /* выбранный язык */
+                &[aria-selected="true"]
+                {
+                    background-color: #fec;
+                    font-weight: 1000;
+                }
+                /* флаги */
+                div.w-full::before
                 {
                     background-repeat: no-repeat !important;
                     background-position: 50% 5% !important;
@@ -50,53 +85,11 @@
                     padding-top: 9px;
                     width: 100%;
                 }
-            }
-            .ins ( en, us, en, 1 );
-            .ins ( ru, ru, ru, 2 );
-            .ins ( de, de, de, 3 );
-            .ins ( fr, fr, fr, 4 );
-            .ins ( bg, bg, bg, 5 );
-            .ins ( cs, cz, cs, 7 );
-            .ins ( da, dk, da, 8 );
-            .ins ( el, gr, el, 9 );
-            .ins ( es, es, es, 10 );
-            .ins ( fi, fi, fi, 11 );
-            .ins ( he, il, he, 12 );
-            .ins ( hu, hu, hu, 13 );
-            .ins ( id, id, id, 14 );
-            .ins ( it, it, it, 15 );
-            .ins ( ja, jp, ja, 16 );
-            .ins ( ko, kr, ko, 17 );
-            .ins ( pl, pl, pl, 18 );
-            .ins ( pt, pt, pt, 19 );
-            .ins ( tr, tr, tr, 20 );
-            .ins ( uk, ua, uk, 21 );
-            .ins ( zh, cn, zh, 22 );
-            .ins ( BR, br, br, 6 );
-
-            span, /* имена языков */
-            &[data-testid*="-auto"],
-            &[data-testid*="-ar"],
-            &[data-testid*="en-GB"],
-            &[data-testid*="-et"],
-            &[data-testid*="-lt"],
-            &[data-testid*="-lv"],
-            &[data-testid*="-nb"],
-            &[data-testid*="-nl"],
-            &[data-testid*="-ro"],
-            &[data-testid*="-sk"],
-            &[data-testid*="-sl"],
-            &[data-testid*="-sv"],
-            &[data-testid*="-vi"],
-            &[data-testid*="-Hant"],
-             {
-                display: none !important;
+                span
+                {
+                    display: none;
+                }
             }
         }
-    }
-    [data-layout-id="sourceLanguagePopover"],
-    [data-layout-id="targetLanguagePopover"]
-    {
-        padding: 0;
     }
 }
