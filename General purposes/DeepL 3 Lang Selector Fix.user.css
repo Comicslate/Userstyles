@@ -1,40 +1,39 @@
 /* ==UserStyle==
 @name           ✔ DeepL 3 Lang Selector Fix
-@version        2025.11.09
+@version        2025.12.13
 @preprocessor   less
 @license        CC-BY-NC-SA-4.0
 @author         Rainbow-Spike
 @namespace		Rainbow-Spike
-@supportURL     https://github.com/Comicslate/Userstyles/raw/main/General%20purposes/DeepL%203%20Lang%20Selector%20Fix.user.css
+@supportURL     https://github.com/Comicslate/Userstyles/issues
+@updateURL     https://github.com/Comicslate/Userstyles/raw/main/General%20purposes/DeepL%203%20Lang%20Selector%20Fix.user.css
 ==/UserStyle== */
 @-moz-document domain("deepl.com")
 {
     /* языков стало слишком много для перечисления на вылет */
-    /* проще погасить всё */
-    [data-testid*="lang-option"], [data-testid*="es-419"] /* латиноиспанский гасим особо */
+    [data-testid*="lang-option"] /* проще погасить всё */
     {
-        display: none !important;
+        display: none;
     }
-    /* а потом включить и украсить нужное */
+    /* а потом включаем и украшиваем нужное */
     .ins ( @lng, @pic, @cnt, @ord )
     {
         &[data-testid*="lang-option-@{lng}"]
         {
-            display: block !important;
+            display: block;
             order: @ord;
-            div.w-full::before
+            div.min-w-0::before
             {
                 background: ~ 'url(https://github.com/DavideViolante/Wikipedia-Flag-Icons/raw/master/Chrome%20Extension/WikipediaFlagIcons/images/flags/@{pic}.png)';
                 content: '@{cnt}';
             }
         }
     }
-    .ins ( en-US, us, en, 1 );
+    .ins ( en, us, en, 1 );
     .ins ( ru, ru, ru, 2 );
     .ins ( de, de, de, 3 );
     .ins ( fr, fr, fr, 4 );
     .ins ( bg, bg, bg, 5 );
-    .ins ( pt-BR, br, br, 6 );
     .ins ( cs, cz, cs, 7 );
     .ins ( da, dk, da, 8 );
     .ins ( el, gr, el, 9 );
@@ -47,29 +46,50 @@
     .ins ( ja, jp, ja, 16 );
     .ins ( ko, kr, ko, 17 );
     .ins ( pl, pl, pl, 18 );
-    .ins ( pt-PT, pt, pt, 19 );
+    .ins ( pt, pt, pt, 19 );
+    .ins ( pt-BR, br, br, 6 );
     .ins ( tr, tr, tr, 20 );
     .ins ( uk, ua, uk, 21 );
-    .ins ( zh-Hans, cn, zh, 22 );
+    .ins ( zh, cn, zh, 22 );
 
+    /* гасим особо */
+    [data-testid$="en-GB"], /* британский */
+    [data-testid*="es-419"], /* латиноиспанский */
+    [data-testid*="zh-Hant"], /* тайваньский */
+    {
+        display: none;
+    }
+    
+    [data-radix-popper-content-wrapper] {
+        min-width: 50% !important;
+        * {
+            min-width: 100%;
+        }
+    }
     [data-layout-id*="LanguagePopover"]
     {
         padding: 0;
+        .px-3 {
+            overflow-y: overlay;
+            padding: 2px;
+        }
         /* удаление поиска языка, пояснений, предложки языков и трёхколоночной сетки */
-        .py-3, h3, div :nth-child(2) .relative, .relative > :nth-child(1)
+        .p-3, h3, [data-testid*="last-used-languages"], .size-full
         {
-            display: none !important;
+            display: none;
         }
         /* общая стилизация панели кнопок */
         [role="listbox"]
         {
-            column-gap: 0;
+            column-gap: 2px;
             grid-template-columns: auto;
             grid-template-rows: auto !important;
+            padding-right: 2px;
             button
             {
                 border: 1px solid #ddd;
-                border-radius: 10px 20px;
+                border-radius: 10px;
+                min-width: 40px;
                 /* выбранный язык */
                 &[aria-selected="true"]
                 {
@@ -77,12 +97,12 @@
                     font-weight: 1000;
                 }
                 /* флаги */
-                div.w-full::before
+                div.min-w-0::before
                 {
                     background-repeat: no-repeat !important;
                     background-position: 50% 5% !important;
                     font-size: 14px;
-                    padding-top: 9px;
+                    padding: 9px 10px 0 10px;
                     width: 100%;
                 }
                 span
