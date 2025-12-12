@@ -1,11 +1,12 @@
 /* ==UserStyle==
 @name           ✔ DeepL 2 Upper Flags Fix
-@version        2025.06.27
+@version        2025.12.13
 @preprocessor   less
 @license        CC-BY-NC-SA-4.0
 @author         Rainbow-Spike
 @namespace		Rainbow-Spike
-@supportURL     https://github.com/Comicslate/Userstyles/raw/main/General%20purposes/DeepL%202%20Upper%20Flags%20Fix.user.css
+@supportURL     https://github.com/Comicslate/Userstyles/issues
+@updateURL     https://github.com/Comicslate/Userstyles/raw/main/General%20purposes/DeepL%202%20Upper%20Flags%20Fix.user.css
 ==/UserStyle== */
 @-moz-document domain("deepl.com") {
     .back ( @lng, @pic ) {
