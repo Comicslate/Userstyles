@@ -36,6 +36,9 @@
     }
     
     /* ЗОНА ЯЗЫКОВ */
+    .sticky {
+        position: static;
+    }
     [data-layout-id="configurationBarLanguagesRow"]
     {
         max-width: 100% !important;
