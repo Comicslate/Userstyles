@@ -1,6 +1,6 @@
 /* ==UserStyle==
 @name           ✔ DeepL 1 Basic Design Fix
-@version        2025.12.13
+@version        2026.01.01
 @preprocessor   less
 @license        CC-BY-NC-SA-4.0
 @author         Rainbow-Spike
@@ -12,6 +12,7 @@
 {
     /* ГЛАВНАЯ РЕЗНЯ */
     [data-layout-id="translatorSidePanel"], /* боковая панель */
+	.gap-redesign-8, /* хвальба */
     [data-layout-id="translatorTabList"], /* языки, файлы, ИИ */
     .\[\.is-home_\&\]\:hidden /* мегареклама */
 	{
